@@ -1,11 +1,21 @@
 package Frame.Panel;
 
+import Contant.CoreConstant;
+import DTO.*;
+import Entity.PhieuBanGiao;
+import Entity.TaiSan;
+import Utils.DateUtil;
+import Utils.SingletonDaoUtil;
+
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.table.*;
 import java.awt.*;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.List;
 
 public class QuanLyTaiSan extends JPanel {
     public QuanLyTaiSan() {
@@ -26,6 +36,12 @@ public class QuanLyTaiSan extends JPanel {
     public void open() {
         initComponents();
         addControls();
+        addEvents();
+
+        loadDataToTblPhongBan();
+        getPBSelected(indexPhongBan);
+        loadDataToTblTaiSan(pbSelected);
+        fillToFormNV(indexPhongBan);
     }
 
     public void initComponents() {
@@ -59,6 +75,7 @@ public class QuanLyTaiSan extends JPanel {
         txaMoTa.setLineWrap(true);
         scMoTa = new JScrollPane(txaMoTa, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
+        //<editor-fold desc="TABLE PHÒNG BAN">
         modelTblPhongBan = new DefaultTableModel();
         modelTblPhongBan.setColumnIdentifiers(new Object[] {"STT", "Tên phòng ban"});
         tblPhongBan = new JTable(modelTblPhongBan){
@@ -74,12 +91,15 @@ public class QuanLyTaiSan extends JPanel {
                 return c;
             }
         };
-        JTableHeader tblHeaderD = tblPhongBan.getTableHeader();
-        ((DefaultTableCellRenderer) tblHeaderD.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-//        tblHeaderD.getColumnModel().getColumn(0).setPreferredWidth(30);
-//        tblHeaderD.getColumnModel().getColumn(1).setPreferredWidth(160);
+        JTableHeader tblHeaderPhongBan = tblPhongBan.getTableHeader();
+        ((DefaultTableCellRenderer) tblHeaderPhongBan.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        tblHeaderPhongBan.getColumnModel().getColumn(0).setPreferredWidth(50);
+        tblHeaderPhongBan.getColumnModel().getColumn(1).setPreferredWidth(280);
+        tblPhongBan.setRowHeight(25);
+        tblPhongBan.setSelectionBackground(Color.decode("#3a4d8f"));
+        //</editor-fold>
 
-        // Table Employee
+        //<editor-fold desc="TABLE TÀI SẢN">
         modelTblTaiSan = new DefaultTableModel();
         modelTblTaiSan.setColumnIdentifiers(new Object[] {"STT", "Mã tài sản","Tên tài sản", "Nguyên giá", "Năm bắt đầu"});
         tblTaiSan = new JTable(modelTblTaiSan){
@@ -91,21 +111,25 @@ public class QuanLyTaiSan extends JPanel {
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
                 JLabel c = (JLabel) super.prepareRenderer(renderer, row, column);
-                if (column == 2) {
-                    c.setHorizontalAlignment(JLabel.LEFT);
-                } else {
                     c.setHorizontalAlignment(JLabel.CENTER);
-
-                }
                 return c;
             }
         };
-        JTableHeader tblHeaderE = tblTaiSan.getTableHeader();
-        ((DefaultTableCellRenderer) tblHeaderE.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        JTableHeader tblHeaderTS = tblTaiSan.getTableHeader();
+        ((DefaultTableCellRenderer) tblHeaderTS.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
+        tblHeaderTS.getColumnModel().getColumn(0).setPreferredWidth(50);
+        tblHeaderTS.getColumnModel().getColumn(1).setPreferredWidth(200);
+        tblHeaderTS.getColumnModel().getColumn(2).setPreferredWidth(100);
+        tblHeaderTS.getColumnModel().getColumn(3).setPreferredWidth(100);
+        tblHeaderTS.getColumnModel().getColumn(4).setPreferredWidth(100);
+        tblTaiSan.setRowHeight(25);
+        tblTaiSan.setSelectionBackground(Color.decode("#3a4d8f"));
+        //</editor-fold>
 
         scTblPhongBan = new JScrollPane(tblPhongBan, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scTblTaiSan = new JScrollPane(tblTaiSan, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
+        //<editor-fold desc="BUTTON">
         btnCancel = new JButton("Bỏ qua");
         btnDelete = new JButton("Xóa", new ImageIcon("src/Image/icon-delete"));
         btnEdit = new JButton("Sửa");
@@ -127,11 +151,13 @@ public class QuanLyTaiSan extends JPanel {
         btnTKTS.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnExport.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        //</editor-fold>
 
         chk1 = new JCheckBox("Chỉ hiển thị phòng ban có tài sản");
 
         txtTimKiem.setPreferredSize(new Dimension(200, 25));
 
+        //<editor-fold desc="CĂN GIỮA TABLE">
         //căn giữa nội dung table
         DefaultTableCellRenderer renderer1 = new DefaultTableCellRenderer() {
             @Override
@@ -171,10 +197,10 @@ public class QuanLyTaiSan extends JPanel {
 
         tblTaiSan.setRowSorter(new TableRowSorter(modelTblTaiSan));
         tblTaiSan.setAutoCreateRowSorter(true);
+        //</editor-fold>
 
         rdo1.setSelected(true);
     }
-
 
     public void addControls() {
         // LEFT
@@ -273,16 +299,16 @@ public class QuanLyTaiSan extends JPanel {
         gbc.gridx = 3; gbc.gridy = 5;
         pnRightTop.add(txtNgayBatDau, gbc);
 
-        JPanel pnButtonEmployee = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        pnButtonEmployee.add(btnNew);
-        pnButtonEmployee.add(btnEdit);
-        pnButtonEmployee.add(btnDelete);
-        pnButtonEmployee.add(btnSave);
-        pnButtonEmployee.add(btnCancel);
+        JPanel pnButton = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        pnButton.add(btnNew);
+        pnButton.add(btnEdit);
+        pnButton.add(btnDelete);
+        pnButton.add(btnSave);
+        pnButton.add(btnCancel);
 
-        gbc.gridwidth = 6;
-        gbc.gridx = 0; gbc.gridy = 6;
-        pnRightTop.add(pnButtonEmployee, gbc);
+        JPanel pnRightTp = new JPanel(new BorderLayout(0,10));
+        pnRightTp.add(pnRightTop, BorderLayout.CENTER);
+        pnRightTp.add(pnButton, BorderLayout.NORTH);
 
         JPanel pnTKTaiSan = new JPanel(new BorderLayout());
         JPanel pnSearchEmployee = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
@@ -301,11 +327,11 @@ public class QuanLyTaiSan extends JPanel {
         pnTblTaiSan.add(scTblTaiSan, BorderLayout.CENTER);
 
         JPanel pnRight = new JPanel(new BorderLayout());
-        pnRight.add(pnRightTop, BorderLayout.NORTH);
+        pnRight.add(pnRightTp, BorderLayout.NORTH);
         pnRight.add(pnTblTaiSan, BorderLayout.CENTER);
 
         JPanel pnTitle = new JPanel();
-        pnTitle.setPreferredSize(new Dimension(0, 10));
+        pnTitle.setPreferredSize(new Dimension(0, 5));
 
         this.setLayout(new BorderLayout(10, 10));
         this.add(pnTitle, BorderLayout.NORTH);
@@ -314,6 +340,137 @@ public class QuanLyTaiSan extends JPanel {
 
         pnLeft.setPreferredSize(new Dimension(340, 0));
     }
+
+    public void addEvents() {
+
+    }
+
+    public void loadDataToTblPhongBan() {
+        modelTblPhongBan.setRowCount(0);
+        phongBanList = SingletonDaoUtil.getPhongBanDaoImpl().getAll();
+
+        int i = 1;
+
+        for (PhongBanDTO item : phongBanList) {
+            modelTblPhongBan.addRow(new Object[] {
+                    i, item.getTenpb()
+            });
+            i++;
+        }
+    }
+
+    public void loadDataToTblTaiSan(PhongBanDTO phongBan) {
+        modelTblTaiSan.setRowCount(0);
+
+        if (phongBan != null) {
+            phieuBanGiaoDTOS = phongBan.getPhieuBanGiaoList();
+            modelTblTaiSan.setRowCount(0);
+            int i = 1;
+
+            for (PhieuBanGiaoDTO item : phieuBanGiaoDTOS) {
+                modelTblTaiSan.addRow(new Object[] {
+                        i, item.getTaiSan().getMats(), item.getTaiSan().getTents(), item.getTaiSan().getNguyengia(),item.getNgaybangiao()
+                });
+                i++;
+            }
+        }
+    }
+
+    public void getPBSelected (int i) {
+        if (phongBanList.size() > 0) {
+            tblPhongBan.setRowSelectionInterval(i, i);
+            Rectangle rect = tblPhongBan.getCellRect(i, 0, true);
+            tblPhongBan.scrollRectToVisible(rect);
+            sttPhongBan = Integer.parseInt(tblPhongBan.getValueAt(i, 0).toString());
+            pbSelected = phongBanList.get(sttPhongBan - 1);
+        }
+    }
+
+    public void fillToFormNV (int i) {
+        if (phieuBanGiaoDTOS.size() > 0) {
+            tblTaiSan.setRowSelectionInterval(i, i);
+            Rectangle rect = tblTaiSan.getCellRect(i, 0, true);
+            tblTaiSan.scrollRectToVisible(rect);
+
+            sttPhongBan = Integer.parseInt(tblTaiSan.getValueAt(i, 0).toString());
+            pbgSelected = phieuBanGiaoDTOS.get(sttPhongBan-1);
+            setModel(pbgSelected);
+        } else {
+            clearFormNV();
+        }
+    }
+
+    public PhieuBanGiaoDTO getModel() {
+        PhieuBanGiaoDTO phieuBanGiaoDTO = new PhieuBanGiaoDTO();
+        TaiSanDTO taiSanDTO = new TaiSanDTO();
+
+        taiSanDTO.setMats(txtMaTaiSan.getText());
+        taiSanDTO.setTents(txtTenTaiSan.getText());
+        taiSanDTO.setNhaSanXuat((NhaSanXuatDTO) cbxHangSanXuat.getSelectedItem());
+        taiSanDTO.setNguyengia(Integer.parseInt(txtNguyenGia.getText()));
+        taiSanDTO.setMota(txaMoTa.getText());
+        taiSanDTO.setTilekhauhao(Double.parseDouble(txtTiLeKhauHao.getText()));
+        taiSanDTO.setThoigiankhauhao(Double.parseDouble(txtThoiGianKhauHao.getText()));
+
+        phieuBanGiaoDTO.setNguoisudungs(txtNguoiSuDung.getText());
+        phieuBanGiaoDTO.setNgaybangiao(txtNgayBatDau.getText());
+        phieuBanGiaoDTO.setTaiSan(taiSanDTO);
+        phieuBanGiaoDTO.setPhongBan(pbSelected);
+        return phieuBanGiaoDTO;
+    }
+
+    public void setModel(PhieuBanGiaoDTO phieuBanGiaoDTO) {
+        if (phieuBanGiaoDTO.getTaiSan().getPhanLoai().getId() == 1) {
+            rdo1.setSelected(true);
+        } else if (phieuBanGiaoDTO.getTaiSan().getPhanLoai().getId() == 2){
+            rdo2.setSelected(true);
+        } else {
+            rdo3.setSelected(true);
+        }
+        txtMaTaiSan.setText(phieuBanGiaoDTO.getTaiSan().getMats());
+        txtTenTaiSan.setText(phieuBanGiaoDTO.getTaiSan().getTents());
+        cbxHangSanXuat.setSelectedItem(phieuBanGiaoDTO.getTaiSan().getNhaSanXuat());
+        txaMoTa.setText(phieuBanGiaoDTO.getTaiSan().getMota());
+        txtNguyenGia.setText(String.valueOf(phieuBanGiaoDTO.getTaiSan().getNguyengia()));
+        txtTiLeKhauHao.setText(String.valueOf(phieuBanGiaoDTO.getTaiSan().getTilekhauhao()));
+        txtThoiGianKhauHao.setText(String.valueOf(phieuBanGiaoDTO.getTaiSan().getThoigiankhauhao()));
+        txtNgayBatDau.setText(phieuBanGiaoDTO.getNgaybangiao());
+        txtNguoiSuDung.setText(phieuBanGiaoDTO.getNguoisudungs());
+    }
+
+    public void clearFormNV() {
+        TaiSanDTO taiSanDTO = new TaiSanDTO();
+        PhieuBanGiaoDTO phieuBanGiaoDTO = new PhieuBanGiaoDTO();
+        setModel(phieuBanGiaoDTO);
+    }
+
+    public void loadDataToCbxNSX() {
+        List<NhaSanXuatDTO> list = SingletonDaoUtil.getNhaSanXuatDaoImpl().getAll();
+        cbxHangSanXuat.removeAllItems();
+
+        if (list.size() > 0) {
+            for (NhaSanXuatDTO item : list) {
+                cbxHangSanXuat.addItem(item);
+            }
+        }
+    }
+
+    //<editor-fold desc="COMPONENT">
+    List<PhongBanDTO> phongBanList = new ArrayList<>();
+    List<PhieuBanGiaoDTO> phieuBanGiaoDTOS = new ArrayList<>();
+    List<TaiSanDTO> taiSanDTOList = new ArrayList<>();
+
+    PhongBanDTO pbSelected = new PhongBanDTO();
+    TaiSanDTO tsSelected = new TaiSanDTO();
+    PhieuBanGiaoDTO pbgSelected = new PhieuBanGiaoDTO();
+
+    int sttPhongBan = -1;
+    int sttTaiSan = -1;
+    int sttPhieuBanGiao = -1;
+
+    int indexPhongBan = 0;
+    int indexTaiSan = 0;
+    int indexPhieuBanGiao = 0;
 
     JLabel lblPhanLoai, lblTenTaiSan, lblMaTaiSan, lblHangSanXuat, lblMoTa, lblNguyenGia, lblTiLeKhauHao, lblThoiGianKhauHao, lblNguoiSuDung, lblNgayBatDau;
     JTextField txtTenTaiSan, txtMaTaiSan, txtNguyenGia, txtTiLeKhauHao, txtThoiGianKhauHao, txtNguoiSuDung, txtNgayBatDau, txtTimKiem;
@@ -326,4 +483,5 @@ public class QuanLyTaiSan extends JPanel {
     JTable tblPhongBan, tblTaiSan;
     DefaultTableModel modelTblPhongBan, modelTblTaiSan;
     JButton btnTKTS, btnNew, btnEdit, btnDelete, btnCancel, btnSave, btnExport;
+    //</editor-fold>
 }

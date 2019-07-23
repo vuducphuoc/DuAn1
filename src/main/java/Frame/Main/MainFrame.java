@@ -1,5 +1,6 @@
 package Frame.Main;
 
+import Frame.Login.LoginFrame;
 import Frame.Panel.BaoCaoThongKe;
 import Frame.Panel.DanhMucKhac;
 import Frame.Panel.QuanLyNhanVien;
@@ -7,6 +8,10 @@ import Frame.Panel.QuanLyTaiSan;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
@@ -31,18 +36,22 @@ public class MainFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        open();
+
+    }
+
+    public void open() {
         initComponents();
         addControls();
+        addEvents();
         showWindow();
     }
 
     public void showWindow() {
         this.setSize(1250, 674);
         this.setResizable(true);
-//        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
 //        ImageIcon icon = new ImageIcon("");
 //        this.setIconImage(icon.getImage());
     }
@@ -110,14 +119,47 @@ public class MainFrame extends JFrame {
         container.add(pnFooter, BorderLayout.SOUTH);
     }
 
-    public void showFunc() {
+    public void addEvents() {
+        mnuSys_showUsername.setText(LoginFrame.nvLogin.getTennv());
+        setTime();
+
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện mnuSys_Signout ">
+        mnuSys_Signout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                signOut();
+            }
+        });
+        // </editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện click vào nút x ">
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                int i = JOptionPane.showConfirmDialog(null, "Bạn có muốn đóng chương trình không", "Thông báo", JOptionPane.YES_NO_OPTION);
+
+                if (i == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                }
+            }
+        });
+        // </editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện mnuSys_Exit ">
+        mnuSys_Exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int i = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn thoát chương trình không?", "Thông báo", JOptionPane.YES_NO_OPTION);
+
+                if (i == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                }
+            }
+        });
+        // </editor-fold>
 
     }
 
-
-    public static void main(String[] args) {
-        new MainFrame();
-    }
 
     // <editor-fold defaultstate="collapsed" desc="SET TIME ">
     public void setTime() {
@@ -139,6 +181,18 @@ public class MainFrame extends JFrame {
                 }
             }
         }.start();
+    }
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="SIGN OUT ">
+    private void signOut() {
+        int i = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn đăng xuất không?", "Thông báo", JOptionPane.YES_NO_OPTION);
+
+        if (i == JOptionPane.YES_OPTION) {
+            this.setVisible(false);
+            JDialog.loginFrame.setVisible(true);
+            JDialog.loginFrame.progressBar.setValue(0);
+        }
     }
     // </editor-fold>
 

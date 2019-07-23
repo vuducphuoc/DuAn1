@@ -1,11 +1,14 @@
 package Entity;
 
+import Utils.DateUtil;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "NHANVIEN")
 public class NhanVien {
+
     @Id
     private String manv;
 
@@ -28,11 +31,15 @@ public class NhanVien {
     private String matkhau;
 
     @Column(name = "VAITRO")
-    private int vaitro;
+    private boolean vaitro;
 
     @ManyToOne
     @JoinColumn(name = "MAPB")
     private PhongBan phongBan;
+
+    public NhanVien () {
+
+    }
 
     public String getManv() {
         return manv;
@@ -90,11 +97,11 @@ public class NhanVien {
         this.matkhau = matkhau;
     }
 
-    public int getVaitro() {
+    public boolean isVaitro() {
         return vaitro;
     }
 
-    public void setVaitro(int vaitro) {
+    public void setVaitro(boolean vaitro) {
         this.vaitro = vaitro;
     }
 

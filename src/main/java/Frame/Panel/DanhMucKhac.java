@@ -6,6 +6,8 @@ import Frame.Panel.QuanLyQuocGia;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Level;
@@ -99,6 +101,26 @@ public class DanhMucKhac extends JPanel {
 
             @Override
             public void mouseExited(MouseEvent e) {
+            }
+        });
+        // </editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện chọn chức năng băng key up down ">
+        listFunc.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    showDetailFunc();
+                }
             }
         });
         // </editor-fold>

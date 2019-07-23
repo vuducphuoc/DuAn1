@@ -53,7 +53,7 @@ public class JDialog extends JFrame {
         Container con = getContentPane();
         con.setLayout(new BorderLayout());
 
-        JLabel lblLogo  = new JLabel(new ImageIcon("src/img/background_hello.png"));
+        JLabel lblLogo  = new JLabel(new ImageIcon("src/Image/background-jdialog.jpg"));
 
         progressBar    = new JProgressBar(0, 100);
 

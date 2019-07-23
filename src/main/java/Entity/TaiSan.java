@@ -8,8 +8,7 @@ import java.util.List;
 public class TaiSan {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String mats;
 
     @JoinColumn(name = "TENTS")
     private String tents;
@@ -34,15 +33,15 @@ public class TaiSan {
     @JoinColumn(name = "MAPL")
     private PhanLoai phanLoai;
 
-    @OneToMany(mappedBy = "taiSan")
+    @OneToMany(mappedBy = "taiSan",fetch = FetchType.EAGER)
     private List<PhieuBanGiao> phieuBanGiaoList;
 
-    public int getId() {
-        return id;
+    public String getMats() {
+        return mats;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMats(String mats) {
+        this.mats = mats;
     }
 
     public String getTents() {

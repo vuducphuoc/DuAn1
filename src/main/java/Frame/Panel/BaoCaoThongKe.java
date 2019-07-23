@@ -1,11 +1,20 @@
 package Frame.Panel;
 
+import DAO.DAOImpl.ThongKe1DaoImpl;
+import DAO.DAOImpl.ThongKe2DaoImpl;
+import DAO.DAOImpl.ThongKe3DaoImpl;
+import Utils.DateUtil;
+import Utils.MoneyUtil;
+
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,6 +39,9 @@ public class BaoCaoThongKe extends JPanel {
         initComponents();
         addControls();
         addEvents();
+        loadDataToTblThongKe1();
+        loadDataToTblThongKe2();
+        loadDataToTblThongKe3();
     }
 
     public void initComponents() {
@@ -39,8 +51,10 @@ public class BaoCaoThongKe extends JPanel {
                 " - Liệt kê danh sách tài sản hết khấu hao"
         });
 
+        cbxChoose.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
 
-        // BẢNG THỐNG KÊ 1
+
+        //<editor-fold desc="BẢNG THỐNG KÊ 1">
         modelTK1 = new DefaultTableModel();
         modelTK1.setColumnIdentifiers(new Object[] {
                 "STT", "Loại tài sản" ,"Số lượng", "Tổng giá trị tài sản"
@@ -59,8 +73,18 @@ public class BaoCaoThongKe extends JPanel {
             }
         };
         scTK1 = new JScrollPane(tblThongKe1, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JTableHeader tblHeader1 = tblThongKe1.getTableHeader();
+        ((DefaultTableCellRenderer) tblHeader1.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
-        // BẢNG THỐNG KÊ 2
+        tblThongKe1.getColumnModel().getColumn(0).setPreferredWidth(90);
+        tblThongKe1.getColumnModel().getColumn(1).setPreferredWidth(500);
+        tblThongKe1.getColumnModel().getColumn(2).setPreferredWidth(100);
+        tblThongKe1.getColumnModel().getColumn(3).setPreferredWidth(200);
+
+        tblThongKe1.setRowHeight(25);
+        //</editor-fold>
+
+        //<editor-fold desc="BẢNG THỐNG KÊ 2">
         modelTK2 = new DefaultTableModel();
         modelTK2.setColumnIdentifiers(new Object[] {
                 "STT", "Tên phòng ban" ,"Số lượng", "Tổng giá trị tài sản"
@@ -79,11 +103,21 @@ public class BaoCaoThongKe extends JPanel {
             }
         };
         scTK2 = new JScrollPane(tblThongKe2, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JTableHeader tblHeader2 = tblThongKe2.getTableHeader();
+        ((DefaultTableCellRenderer) tblHeader2.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
-        // BẢNG THỐNG KÊ 3
+        tblThongKe2.getColumnModel().getColumn(0).setPreferredWidth(90);
+        tblThongKe2.getColumnModel().getColumn(1).setPreferredWidth(500);
+        tblThongKe2.getColumnModel().getColumn(2).setPreferredWidth(100);
+        tblThongKe2.getColumnModel().getColumn(3).setPreferredWidth(200);
+
+        tblThongKe2.setRowHeight(25);
+        //</editor-fold>
+
+        //<editor-fold desc="BẢNG THỐNG KÊ 3">
         modelTK3 = new DefaultTableModel();
         modelTK3.setColumnIdentifiers(new Object[] {
-                "STT", "Tên tài sản", "Loại tài sản" ,"Thời gian khấu hao", "Thời gian còn lại"
+                "STT", "Tên tài sản", "Loại tài sản" ,"Ngày bàn giao", "Thời gian khấu hao"
         });
         tblThongKe3 =  new JTable(modelTK3){
             @Override
@@ -99,16 +133,20 @@ public class BaoCaoThongKe extends JPanel {
             }
         };
         scTK3 = new JScrollPane(tblThongKe3, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-
-        JTableHeader tblHeader1 = tblThongKe1.getTableHeader();
-        ((DefaultTableCellRenderer) tblHeader1.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        JTableHeader tblHeader2 = tblThongKe2.getTableHeader();
-        ((DefaultTableCellRenderer) tblHeader2.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
         JTableHeader tblHeader3 = tblThongKe3.getTableHeader();
         ((DefaultTableCellRenderer) tblHeader3.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
+        tblThongKe3.getColumnModel().getColumn(0).setPreferredWidth(90);
+        tblThongKe3.getColumnModel().getColumn(1).setPreferredWidth(300);
+        tblThongKe3.getColumnModel().getColumn(2).setPreferredWidth(200);
+        tblThongKe3.getColumnModel().getColumn(3).setPreferredWidth(200);
+        tblThongKe3.getColumnModel().getColumn(4).setPreferredWidth(100);
+
+        tblThongKe3.setRowHeight(25);
+        //</editor-fold>
+
+
         //<editor-fold desc="Căn giữa tbl1">
-        //căn giữa nội dung table
         DefaultTableCellRenderer renderer1 = new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -171,7 +209,7 @@ public class BaoCaoThongKe extends JPanel {
         tblThongKe3.setAutoCreateRowSorter(true);
         //</editor-fold>
 
-        cbxChoose.setPreferredSize(new Dimension(600, 25));
+        cbxChoose.setPreferredSize(new Dimension(800, 30));
 
         btnExport1 = new JButton("Kết xuất");
         btnExport2 = new JButton("Kết xuất");
@@ -224,13 +262,79 @@ public class BaoCaoThongKe extends JPanel {
             public void itemStateChanged(ItemEvent itemEvent) {
                 int i = cbxChoose.getSelectedIndex() + 1;
                 switch (i) {
-                    case 1: cardLayout.show(pnContent, "ThongKe1"); break;
-                    case 2: cardLayout.show(pnContent, "ThongKe2"); break;
-                    case 3: cardLayout.show(pnContent, "ThongKe3"); break;
+                    case 1:
+                        cardLayout.show(pnContent, "ThongKe1");
+                        break;
+                    case 2:
+                        cardLayout.show(pnContent, "ThongKe2");
+                        loadDataToTblThongKe2();
+                        break;
+                    case 3:
+                        cardLayout.show(pnContent, "ThongKe3");
+                        loadDataToTblThongKe3();
+                        break;
                     default: break;
                 }
             }
         });
+    }
+
+    public void loadDataToTblThongKe1() {
+        List<Object[]> list = new ThongKe1DaoImpl().getListThongKe1();
+        modelTK1.setRowCount(0);
+        int stt = 1;
+
+        for (Object[] item : list) {
+            String money = null;
+            if (item[2]!= null) {
+                String temp = item[2].toString();
+                System.out.println(temp);
+                money = MoneyUtil.castIntToMoney(Long.parseLong(temp));
+            } else {
+                money = "0";
+            }
+            modelTK1.addRow(new Object[]{
+                    stt,item[0], item[1], money
+            });
+            stt++;
+        }
+    }
+
+    public void loadDataToTblThongKe2() {
+        List<Object[]> list = new ThongKe2DaoImpl().getListThongKe2();
+        modelTK2.setRowCount(0);
+        int stt = 1;
+        for (Object[] item : list) {
+            String money = null;
+            if (item[2] != null) {
+                String temp = item[2].toString();
+                money = MoneyUtil.castIntToMoney(Long.parseLong(temp));
+            } else {
+                money = "0";
+            }
+            modelTK2.addRow(new Object[]{
+                    stt,item[0], item[1], money
+            });
+            stt++;
+        }
+    }
+
+    public void loadDataToTblThongKe3() {
+        List<Object[]> list = new ThongKe3DaoImpl().getListThongKe3();
+        modelTK3.setRowCount(0);
+        int stt = 1;
+        for (Object[] item : list) {
+            String date = null;
+            try {
+                 date = DateUtil.castDateForm3ToForm1(item[2].toString());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            modelTK3.addRow(new Object[]{
+                    stt,item[0], item[1], date , item[3]
+            });
+            stt++;
+        }
     }
 
     //<editor-fold desc="COMPONENT">

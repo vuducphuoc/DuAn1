@@ -32,6 +32,8 @@
         <mapping class="Entity.PhongBan" />
         <mapping class="Entity.QuocGia" />
         <mapping class="Entity.TaiSan" />
+        <mapping class="Entity.TaiSan" />
+        <mapping class="Entity.TaiSan" />
 
     </session-factory>
 </hibernate-configuration>

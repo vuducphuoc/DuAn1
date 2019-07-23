@@ -1,9 +1,17 @@
 package Frame.Login;
 
+import Contant.CoreConstant;
+import Entity.NhanVien;
 import Frame.Main.MainFrame;
+import Utils.DialogUtils;
+import Utils.SingletonDaoUtil;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -29,11 +37,10 @@ public class LoginFrame extends JFrame {
     }
 
     private void showWindows() {
-        this.setSize(450, 320);
+        this.setSize(430, 320);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-//        this.setVisible(true);
         ImageIcon icon = new ImageIcon("src/img/logo_apt.png");
         this.setIconImage(icon.getImage());
     }
@@ -116,16 +123,92 @@ public class LoginFrame extends JFrame {
     }
 
     private void addEvents() {
+        btnLogin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                login();
+            }
+        });
+
+        btnExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        });
+
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện phím enter và down cho txtUser ">
+        txtUser.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    login();
+                }
+
+                if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    pwfPassword.requestFocus();
+                }
+            }
+        });
+        // </editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện phím enter và up cho txtPass ">
+        pwfPassword.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    login();
+                }
+
+                if (e.getKeyCode() == KeyEvent.VK_UP) {
+                    txtUser.requestFocus();
+                }
+            }
+        });
+        // </editor-fold>
     }
 
+    public void login() {
+        String email = txtUser.getText().trim();
+        String password = pwfPassword.getText().trim();
+
+        boolean kiemtra = SingletonDaoUtil.getNhanVienDaoImpl().checkLogin(email, password);
+        if (kiemtra == CoreConstant.LOGIN_SUCCESS) {
+            mainFrame = new MainFrame();
+            mainFrame.setVisible(true);
+            frThis.setVisible(false);
+        } else {
+            pwfPassword.setText("");
+            pwfPassword.requestFocus();
+        }
+    }
+
+    //<editor-fold desc="COMPONENT">
     public JProgressBar progressBar;
     JTextField txtUser;
     JPasswordField pwfPassword;
     JButton btnLogin, btnExit;
     JLabel lblUser, lblPassword, lblTitle;
+    public static NhanVien nvLogin;
 
     JFrame frThis = this;
     public static MainFrame mainFrame;
     public static int role;
-    final int ADMIN = 1;
+    //</editor-fold>
 }

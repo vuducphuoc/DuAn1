@@ -13,7 +13,7 @@ public class QuocGia {
     @Column(name = "TENQG")
     private String tenqg;
 
-    @OneToMany(mappedBy = "quocGia")
+    @OneToMany(mappedBy = "quocGia", fetch = FetchType.EAGER)
     private List<NhaSanXuat> nhaSanXuatList;
 
     public String getMaqg() {

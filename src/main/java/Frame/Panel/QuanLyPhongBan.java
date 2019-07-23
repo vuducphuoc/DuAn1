@@ -1,10 +1,15 @@
 package Frame.Panel;
 
+import DTO.PhongBanDTO;
+import Utils.SingletonDaoUtil;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.List;
 
 public class QuanLyPhongBan extends JPanel {
     public QuanLyPhongBan() {
@@ -21,6 +26,7 @@ public class QuanLyPhongBan extends JPanel {
         }
         initComponents();
         addControls();
+        loadDataToTblPhongBan();
         this.setSize(1200, 600);
     }
 
@@ -67,7 +73,7 @@ public class QuanLyPhongBan extends JPanel {
     }
 
     public void addControls() {
-        JPanel pnDetail = new JPanel(new BorderLayout());
+        JPanel pnDetail = new JPanel(new BorderLayout(0, 10));
 
         JPanel pnDetailItem = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -92,7 +98,6 @@ public class QuanLyPhongBan extends JPanel {
 
         gbc.gridx = 1; gbc.gridy = 1;
         pnDetailItem.add(txtName, gbc);
-
 
         JPanel pnButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         pnButtons.add(btnNew);
@@ -120,10 +125,26 @@ public class QuanLyPhongBan extends JPanel {
         this.add(pnTable, BorderLayout.CENTER);;
     }
 
+    public void loadDataToTblPhongBan() {
+        phongBanDTOList = SingletonDaoUtil.getPhongBanDaoImpl().getAll();
+        modelTalDepartment.setRowCount(0);
+        int i = 1;
+        for (PhongBanDTO item : phongBanDTOList) {
+            modelTalDepartment.addRow(new Object[] {
+                i, item.getMapb(), item.getTenpb()
+            });
+            i++;
+        }
+    }
+
+    //<editor-fold desc="COMPONENT">
+    List<PhongBanDTO> phongBanDTOList = new ArrayList<>();
+
     JLabel lblId, lblName, lblSearch;
     JTextField txtId, txtName, txtSearch;
     JButton btnNext, btnNew, btnEdit, btnDelete, btnCancel, btnSave, btnExport;
     JTable tblDepartment;
     DefaultTableModel modelTalDepartment;
     JScrollPane scTalDepartment;
+    //</editor-fold>
 }
