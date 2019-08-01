@@ -1,10 +1,7 @@
 package Frame.Main;
 
 import Frame.Login.LoginFrame;
-import Frame.Panel.BaoCaoThongKe;
-import Frame.Panel.DanhMucKhac;
-import Frame.Panel.QuanLyNhanVien;
-import Frame.Panel.QuanLyTaiSan;
+import Frame.Panel.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +16,7 @@ import java.util.logging.Logger;
 
 public class MainFrame extends JFrame {
     public static QuanLyNhanVien quanLyNhanVien = new QuanLyNhanVien();
+    public static QuanLyPhieuBanGiao quanLyPhieuBanGiao = new QuanLyPhieuBanGiao();
     public static QuanLyTaiSan quanLyTaiSan = new QuanLyTaiSan();
     public static DanhMucKhac danhMucKhac = new DanhMucKhac();
     public static BaoCaoThongKe baoCaoThongKe = new BaoCaoThongKe();
@@ -48,7 +46,7 @@ public class MainFrame extends JFrame {
     }
 
     public void showWindow() {
-        this.setSize(1250, 674);
+        this.setSize(1300, 674);
         this.setResizable(true);
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -94,7 +92,8 @@ public class MainFrame extends JFrame {
         tabbedPane = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
         tabbedPane.setBounds(50,50, 300, 300);
 
-        tabbedPane.addTab("Quản lý Tài Sản", new ImageIcon("src/Image/icon-employee.png"), quanLyTaiSan);
+        tabbedPane.addTab("Quản lý Phiếu Bàn Giao", new ImageIcon("src/Image/icon-asset.png"), quanLyPhieuBanGiao);
+        tabbedPane.addTab("Quản lý Tài Sản", new ImageIcon("src/Image/icon-asset.png"), quanLyTaiSan);
         tabbedPane.addTab("Quản lý Nhân Viên", new ImageIcon("src/Image/icon-employee.png"), quanLyNhanVien);
         tabbedPane.addTab("Báo cáo - Thống Kê", new ImageIcon("src/Image/icon-statistical.png"), baoCaoThongKe);
         tabbedPane.addTab("Danh mục khác", new ImageIcon("src/Image/icon-other-category.png"), danhMucKhac);

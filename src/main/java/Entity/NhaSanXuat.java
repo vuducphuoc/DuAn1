@@ -41,4 +41,9 @@ public class NhaSanXuat {
     public void setQuocGia(QuocGia quocGia) {
         this.quocGia = quocGia;
     }
+
+    @Override
+    public String toString() {
+        return tennsx + " - " + quocGia.getTenqg();
+    }
 }

@@ -16,17 +16,6 @@ public class PhongBanBeanUtil {
         PhongBanDTO dto = new PhongBanDTO();
         dto.setMapb(entity.getMapb());
         dto.setTenpb(entity.getTenpb());
-        List<NhanVienDTO> nhanVienDTOList = new ArrayList<>();
-        for (NhanVien item : entity.getNhanVienList()) {
-            nhanVienDTOList.add(NhanVienBeanUtil.entity2Dto(item));
-        }
-        dto.setNhanVienList(nhanVienDTOList);
-
-        List<PhieuBanGiaoDTO> phieuBanGiaoDTOList = new ArrayList<>();
-        for (PhieuBanGiao item : entity.getPhieuBanGiaoList()) {
-            phieuBanGiaoDTOList.add(PhieuBanGiaoBeanUtil.entity2Dto(item));
-        }
-        dto.setPhieuBanGiaoList(phieuBanGiaoDTOList);
         return  dto;
     }
 

@@ -14,13 +14,17 @@ public class PhongBanDaoImpl extends AbstractDao<String, PhongBan> implements Ph
 
     @Override
     public List<PhongBanDTO> getAll() {
-        List<PhongBan> phongBanList = findAll();
-        List<PhongBanDTO> phongBanDTOList = new ArrayList<>();
+            // Trả ra list <Entity>
+            List<PhongBan> phongBanList = findAll();
 
-        for (PhongBan item : phongBanList) {
-            phongBanDTOList.add(PhongBanBeanUtil.entity2Dto(item));
-        }
+            // List theo DTO
+            List<PhongBanDTO> phongBanDTOList = new ArrayList<>();
+            // Chuyển từ intity sang DTO
+            for (PhongBan item : phongBanList) {
+                PhongBanDTO dto = PhongBanBeanUtil.entity2Dto(item);
+                phongBanDTOList.add(dto);
+            }
 
-        return phongBanDTOList;
+            return phongBanDTOList;
     }
 }

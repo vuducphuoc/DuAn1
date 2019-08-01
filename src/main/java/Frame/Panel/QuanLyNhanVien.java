@@ -11,19 +11,17 @@ import Utils.DialogUtils;
 import Utils.SingletonDaoUtil;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.List;
 
 public class QuanLyNhanVien extends JPanel{
     public QuanLyNhanVien() {
@@ -136,11 +134,11 @@ public class QuanLyNhanVien extends JPanel{
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
                 JLabel c = (JLabel) super.prepareRenderer(renderer, row, column);
-//                if (column == 2) {
-//                    c.setHorizontalAlignment(JLabel.LEFT);
-//                } else {
+                if (column == 0) {
                     c.setHorizontalAlignment(JLabel.CENTER);
-//                }
+                } else {
+                    c.setHorizontalAlignment(JLabel.LEFT);
+                }
                 return c;
             }
         };
@@ -164,31 +162,33 @@ public class QuanLyNhanVien extends JPanel{
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
                 JLabel c = (JLabel) super.prepareRenderer(renderer, row, column);
-//                if (column == 2) {
-//                    c.setHorizontalAlignment(JLabel.LEFT);
-//                } else {
+                if (column == 2) {
+                    c.setHorizontalAlignment(JLabel.LEFT);
+                } else {
                     c.setHorizontalAlignment(JLabel.CENTER);
-//                }
+                }
                 return c;
             }
         };
         JTableHeader tblHeaderE = tblEmployee.getTableHeader();
         ((DefaultTableCellRenderer) tblHeaderE.getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
-        tblHeaderE.getColumnModel().getColumn(0).setPreferredWidth(30);
+        tblHeaderE.getColumnModel().getColumn(0).setPreferredWidth(20);
         tblHeaderE.getColumnModel().getColumn(1).setPreferredWidth(150);
-        tblHeaderE.getColumnModel().getColumn(2).setPreferredWidth(250);
+        tblHeaderE.getColumnModel().getColumn(2).setPreferredWidth(300);
         tblHeaderE.getColumnModel().getColumn(3).setPreferredWidth(50);
         tblHeaderE.getColumnModel().getColumn(4).setPreferredWidth(100);
         tblEmployee.setRowHeight(25);
         tblEmployee.setSelectionBackground(Color.decode("#3a4d8f"));
         //</editor-fold>
 
+        //<editor-fold desc="Description">
         scTblDepartment = new JScrollPane(tblDepartment, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scTblEmployee = new JScrollPane(tblEmployee, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         tblDepartment.setRowSorter(new TableRowSorter(modelDepartment));
         tblDepartment.setAutoCreateRowSorter(true);
         tblEmployee.setRowSorter(new TableRowSorter(modelEmployee));
         tblEmployee.setAutoCreateRowSorter(true);
+        //</editor-fold>
 
         //<editor-fold desc="BUTTON">
         btnSearchDepartment = new JButton("Tìm tiếp");
@@ -214,13 +214,39 @@ public class QuanLyNhanVien extends JPanel{
         btnSearchDepartment.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnExport.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnSave.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        btnDelete.setPreferredSize(btnNew.getPreferredSize());
+        btnSearchEmployee.setPreferredSize(btnNew.getPreferredSize());
+        btnSave.setPreferredSize(btnNew.getPreferredSize());
+        btnCancel.setPreferredSize(btnNew.getPreferredSize());
+        btnEdit.setPreferredSize(btnNew.getPreferredSize());
         //</editor-fold>
+
+        lblId.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        lblName.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        lblSex.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        lblUsername.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        lblBirthDay.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        lblAddress.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        lblRole.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        lblSearchDepartment.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+
+        txtId.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        txtName.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        rdoMale.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        rdoFemale.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        rdoAdmin.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        rdoEmployee.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        txtBirthday.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        txaAddress.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+        txtUsername.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 13));
+
+
     }
 
     public void addControls() {
         // LEFT
         JPanel pnSearchDepartment = new JPanel();
-//        pnSearchDepartment.add(lblSearchDepartment);
         pnSearchDepartment.add(txtSearchDepartment);
         pnSearchDepartment.add(btnSearchDepartment);
 
@@ -232,11 +258,14 @@ public class QuanLyNhanVien extends JPanel{
         pnLeft.add(scTblDepartment, BorderLayout.CENTER);
 
         //RIGHT
-        JPanel pnSex = new JPanel(new FlowLayout(FlowLayout.LEADING, 0, 0));
+        JPanel pnSex = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
         pnSex.add(rdoMale); pnSex.add(rdoFemale);
 
-        JPanel pnRole = new JPanel(new FlowLayout(FlowLayout.LEADING, 0, 0));
+        JPanel pnRole = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
         pnRole.add(rdoAdmin); pnRole.add(rdoEmployee);
+
+        pnRole.setPreferredSize(new Dimension(300, 15));
+        pnSex.setPreferredSize(pnRole.getPreferredSize());
 
         JPanel pnDetailEmployee = new JPanel();
         pnDetailEmployee.setLayout(new GridBagLayout());
@@ -245,8 +274,7 @@ public class QuanLyNhanVien extends JPanel{
 
         gbc.insets = new Insets(5, 10, 5, 10);
 
-        gbc.ipadx = 20;
-        gbc.ipady = 5;
+        gbc.ipady = 7;
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -260,8 +288,22 @@ public class QuanLyNhanVien extends JPanel{
         gbc.gridy = 2;
         pnDetailEmployee.add(lblAddress, gbc);
 
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        pnDetailEmployee.add(txtId, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        pnDetailEmployee.add(pnSex, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.gridheight = 2;
+        pnDetailEmployee.add(scAddress, gbc);
+
         gbc.gridx = 2;
         gbc.gridy = 0;
+        gbc.gridheight = 1;
         pnDetailEmployee.add(lblName, gbc);
 
         gbc.gridx = 2;
@@ -276,22 +318,10 @@ public class QuanLyNhanVien extends JPanel{
         gbc.gridy = 3;
         pnDetailEmployee.add(lblUsername, gbc);
 
-        gbc.ipadx = 150;
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        pnDetailEmployee.add(txtId, gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        pnDetailEmployee.add(pnSex, gbc);
-
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        gbc.gridheight = 2;
-        pnDetailEmployee.add(scAddress, gbc);
 
         gbc.gridheight = 1;
-        gbc.ipadx = 150;
+        gbc.fill = GridBagConstraints.BOTH;
+
         gbc.gridx = 3;
         gbc.gridy = 0;
         pnDetailEmployee.add(txtName, gbc);
@@ -315,11 +345,6 @@ public class QuanLyNhanVien extends JPanel{
         pnButtonEmployee.add(btnSave);
         pnButtonEmployee.add(btnCancel);
 
-//        gbc.gridx = 0;
-//        gbc.gridy = 4;
-//        gbc.gridwidth = 4;
-//        pnDetailEmployee.add(pnButtonEmployee, gbc);
-
         JPanel pnRightTop = new JPanel(new BorderLayout(0, 20));
         pnRightTop.add(pnDetailEmployee, BorderLayout.CENTER);
         pnRightTop.add(pnButtonEmployee, BorderLayout.SOUTH);
@@ -331,7 +356,6 @@ public class QuanLyNhanVien extends JPanel{
         pnSearchEmployee.add(txtSearchEmployee);
         pnSearchEmployee.add(btnSearchEmployee);
         JPanel pnExport = new JPanel(new FlowLayout(FlowLayout.RIGHT, 30, 10));
-        pnExport.add(btnExport);
 
         JPanel pnTemp2 = new JPanel();
         pnTblEmployeeTop.add(pnSearchEmployee, BorderLayout.WEST);
@@ -451,14 +475,7 @@ public class QuanLyNhanVien extends JPanel{
         btnNew.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                setStatus(CoreConstant.FLAG_INSERT);
-                clearFormNV();
-                try {
-                    txtId.setText(createID());
-                    tblEmployee.clearSelection();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                addNew();
             }
         });
 
@@ -482,17 +499,195 @@ public class QuanLyNhanVien extends JPanel{
         btnSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                NhanVienDTO nhanVien = getModel();
-                if (flagSave == CoreConstant.FLAG_INSERT) {
-                    SingletonDaoUtil.getNhanVienDaoImpl().save(NhanVienBeanUtil.dto2Entity(nhanVien));
-                    saveSuccess();
-                } else if (flagSave == CoreConstant.FLAG_UPDATE) {
-                    SingletonDaoUtil.getNhanVienDaoImpl().update(NhanVienBeanUtil.dto2Entity(nhanVien));
-                    saveSuccess();
+                save();
+            }
+        });
+
+        btnDelete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                delete();
+            }
+        });
+
+        // <editor-fold defaultstate="collapsed" desc="Tìm kiếm Nhân viên với txtSearch ">
+        txtSearchEmployee.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                if (txtSearchEmployee.getText().length() > 0) {
+                    nhanVienListSearch = getListEmployeeSearch();
+                    search();
+                } else {
+                    indexEmployeeSearch = 0;
+                    indexEmployee = 0;
+                    fillToFormNV(indexEmployee);
+                }
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                if (txtSearchEmployee.getText().length() > 0) {
+                    nhanVienListSearch = getListEmployeeSearch();
+                    search();
+                    if (nhanVienListSearch.size() > 0) {
+                        btnNew.setEnabled(true);
+                        btnEdit.setEnabled(true);
+                        btnDelete.setEnabled(true);
+                    } else {
+                        btnNew.setEnabled(false);
+                        btnEdit.setEnabled(false);
+                        btnDelete.setEnabled(false);
+                    }
+                } else {
+                    indexEmployeeSearch = 0;
+                    indexEmployee = 0;
+                    fillToFormNV(indexEmployee);
+                }
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+        });
+
+        txtSearchEmployee.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER && nhanVienListSearch.size() > 0 && txtSearchEmployee.getText().length() > 0) {
+                    indexEmployeeSearch = indexEmployeeSearch + 1;
+                    search();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+        // </editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện clear txtSearch với phím ESC ">
+        txtSearchEmployee.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    txtSearchEmployee.setText("");
+                    indexEmployee = 0;
+                    fillToFormNV(indexEmployee);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+        // </editor-fold>
+
+        //<editor-fold defaultstate="collapsed" desc="Sự kiện TÌM CD TIẾP THEO VỚI btnNextSearch">
+        btnSearchEmployee.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (txtSearchEmployee.getText().length() > 0) {
+                    indexEmployeeSearch = indexEmployeeSearch + 1;
+                    search();
                 }
             }
         });
+        //</editor-fold>
     }
+
+    public void addNew() {
+        setStatus(CoreConstant.FLAG_INSERT);
+        clearFormNV();
+        txtId.setText(createID());
+        tblEmployee.clearSelection();
+    }
+
+    public void save() {
+        NhanVien nhanVien = getModel();
+        if (flagSave == CoreConstant.FLAG_INSERT) {
+            SingletonDaoUtil.getNhanVienDaoImpl().save(nhanVien);
+            saveSuccess();
+        } else if (flagSave == CoreConstant.FLAG_UPDATE) {
+            SingletonDaoUtil.getNhanVienDaoImpl().update(nhanVien);
+            saveSuccess();
+        }
+    }
+
+    public void delete() {
+        boolean answer = DialogUtils.showConfirmDialog("Bạn có muốn xóa nhân viên "+nvSelected + " không?");
+        if (answer) {
+            int n = SingletonDaoUtil.getNhanVienDaoImpl().delete(nvSelected);
+
+            if (n > 0) {
+                if (indexEmployee == nhanVienList.size() -1) {
+                    indexEmployee = indexEmployee - 1;
+                }
+                deleteSuccess();
+            }
+        }
+    }
+
+
+    public void saveSuccess() {
+        loadDataToTblEmployee(pbSelected);
+        for (NhanVien item : nhanVienList) {
+            if (item.getManv().equalsIgnoreCase(getModel().getManv())) {
+                indexEmployee = nhanVienList.indexOf(item);
+                fillToFormNV(indexEmployee);
+                break;
+            }
+        }
+        statusDefault();
+    }
+
+    public void deleteSuccess() {
+        loadDataToTblEmployee(pbSelected);
+        fillToFormNV(indexEmployee);
+    }
+
+
+    public List<NhanVien> getListEmployeeSearch() {
+        String str = txtSearchEmployee.getText().trim();
+        Map<String, Object> map = new HashMap<>();
+        map.put("manv", str);
+        map.put("tennv", str);
+        List<NhanVien> list = SingletonDaoUtil.getNhanVienDaoImpl().searchByProperty(map, pbSelected);
+        System.out.println(list.size());
+        return list;
+    }
+
+    public void search() {
+        if (nhanVienListSearch.size() > 0) {
+
+            if (indexEmployeeSearch == nhanVienListSearch.size()) {
+                indexEmployeeSearch = 0;
+            }
+
+            for (NhanVien item : nhanVienList) {
+                if (item.getManv().equalsIgnoreCase(nhanVienListSearch.get(indexEmployeeSearch).getManv())) {
+                    indexEmployee = nhanVienList.indexOf(item);
+                    fillToFormNV(indexEmployee);
+                    break;
+                }
+            }
+        } else {
+            clearFormNV();
+            indexEmployeeSearch = 0;
+            indexEmployee = 0;
+            tblEmployee.clearSelection();
+        }
+    }
+
 
     public void statusDefault() {
         flagSave = CoreConstant.FLAG_EMTY;
@@ -552,26 +747,14 @@ public class QuanLyNhanVien extends JPanel{
         txtUsername.setEditable(true);
     }
 
-    public void saveSuccess() {
-        loadDataToTblDepartment();
-        getPBSelected(indexDepartment);
-        loadDataToTblEmployee(pbSelected);
-        for (NhanVienDTO item : nhanVienList) {
-            if (item.getManv().equalsIgnoreCase(getModel().getManv())) {
-                indexEmployee = nhanVienList.indexOf(item);
-                fillToFormNV(indexEmployee);
-            }
-        }
-        statusDefault();
-    }
 
     public void loadDataToTblDepartment() {
         modelDepartment.setRowCount(0);
-        phongBanList = SingletonDaoUtil.getPhongBanDaoImpl().getAll();
+        phongBanList = SingletonDaoUtil.getPhongBanDaoImpl().findAll();
 
         int i = 1;
 
-        for (PhongBanDTO item : phongBanList) {
+        for (PhongBan item : phongBanList) {
             modelDepartment.addRow(new Object[] {
                     i, item.getTenpb()
             });
@@ -579,15 +762,15 @@ public class QuanLyNhanVien extends JPanel{
         }
     }
 
-    public void loadDataToTblEmployee(PhongBanDTO phongBan) {
+    public void loadDataToTblEmployee(PhongBan phongBan) {
         modelEmployee.setRowCount(0);
 
         if (phongBan != null) {
-            nhanVienList = phongBan.getNhanVienList();
+            nhanVienList = SingletonDaoUtil.getNhanVienDaoImpl().getByPhongBan(pbSelected);
             modelEmployee.setRowCount(0);
             int j = 1;
 
-            for (NhanVienDTO item : nhanVienList) {
+            for (NhanVien item : nhanVienList) {
                 modelEmployee.addRow(new Object[] {
                         j, item.getManv(), item.getTennv(), item.isGioitinh() == true ? "Nam":"Nữ", item.isVaitro() == CoreConstant.ADMIN ? "Quản trị" : "Nhân viên"
                 });
@@ -613,15 +796,16 @@ public class QuanLyNhanVien extends JPanel{
             tblEmployee.scrollRectToVisible(rect);
 
             String id = (tblEmployee.getValueAt(i, 1).toString());
-            nvSelected = SingletonDaoUtil.getNhanVienDaoImpl().getById(id);
+            nvSelected = SingletonDaoUtil.getNhanVienDaoImpl().findById(id);
             setModel(nvSelected);
         } else {
             clearFormNV();
         }
     }
 
-    public NhanVienDTO getModel() {
-        NhanVienDTO nv = null;
+
+    public NhanVien getModel() {
+        NhanVien nv = null;
         String manv = txtId.getText().trim();
         String tennv = txtName.getText().trim();
         boolean gioitinh = rdoMale.isSelected() == true ? true : false;
@@ -651,11 +835,11 @@ public class QuanLyNhanVien extends JPanel{
             }
         }
 
-        nv = new NhanVienDTO(manv,tennv,gioitinh, ngaysinh, diachi, taikhoan,matkhau,vaitro,pbSelected);
+        nv = new NhanVien(manv,tennv,gioitinh, ngaysinh, diachi, taikhoan,matkhau,vaitro,pbSelected);
         return  nv;
     }
 
-    public void setModel(NhanVienDTO nhanVien) {
+    public void setModel(NhanVien nhanVien) {
         txtId.setText(nhanVien.getManv());
         txtName.setText(nhanVien.getTennv());
         rdoMale.setSelected(nhanVien.isGioitinh() == true ? true : false);
@@ -670,12 +854,12 @@ public class QuanLyNhanVien extends JPanel{
     }
 
     public void clearFormNV() {
-        NhanVienDTO nv = new NhanVienDTO();
+        NhanVien nv = new NhanVien();
         setModel(nv);
     }
 
     // <editor-fold defaultstate="collapsed" desc="TẠO MÃ NHÂN VIÊN">
-    private String createID() throws SQLException {
+    private String createID() {
         String lastID = SingletonDaoUtil.getNhanVienDaoImpl().getLastID();
 
         if (lastID != null) {
@@ -696,15 +880,22 @@ public class QuanLyNhanVien extends JPanel{
         }
     }
 
-    List<NhanVienDTO> nhanVienList = new ArrayList<>();
-    List<PhongBanDTO> phongBanList = new ArrayList<>();
-    NhanVienDTO nvSelected =  new NhanVienDTO();
-    PhongBanDTO pbSelected = new PhongBanDTO();
+    List<NhanVien> nhanVienList = new ArrayList<>();
+    List<PhongBan> phongBanList = new ArrayList<>();
+
+    List<NhanVien> nhanVienListSearch = new ArrayList<>();
+    List<PhongBan> phongBanListSearch = new ArrayList<>();
+
+    NhanVien nvSelected =  new NhanVien();
+    PhongBan pbSelected = new PhongBan();
 
     String messCancel;
 
     int flagSave = CoreConstant.FLAG_EMTY;
+
     int indexEmployee = 0;
+    int indexEmployeeSearch = 0;
+
     int indexDepartment = 0;
     int sttEmployee = -1;
     int sttDepartment= -1;

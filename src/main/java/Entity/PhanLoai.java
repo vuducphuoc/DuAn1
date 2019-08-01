@@ -14,7 +14,7 @@ public class PhanLoai {
     @Column(name = "TENPL")
     private String tenpl;
 
-    @OneToMany(mappedBy = "nhaSanXuat" , fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "nhaSanXuat" , fetch = FetchType.LAZY)
     private List<TaiSan> taiSanList;
 
     public int getId() {

@@ -9,6 +9,7 @@ import org.hibernate.*;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -100,6 +101,7 @@ public class AbstractDao <ID extends Serializable, T> implements GenericDao<ID, 
     }
 
     public Object[] findByProperty(Map<String, Object> property, String sortExpression, String sortDirection, Integer offset, Integer limit, String whereClause) {
+
         List<T> list = new ArrayList<T>();
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -143,7 +145,7 @@ public class AbstractDao <ID extends Serializable, T> implements GenericDao<ID, 
         return new Object[]{totalItem, list};
     }
 
-    private void setParameterToQuery(Object[] nameQuery, Query query) {
+    public void setParameterToQuery(Object[] nameQuery, Query query) {
         if (nameQuery.length == 3) {
             String[] params = (String[]) nameQuery[1];
             Object[] values = (Object[]) nameQuery[2];
@@ -153,18 +155,17 @@ public class AbstractDao <ID extends Serializable, T> implements GenericDao<ID, 
         }
     }
 
-    public Integer delete(List<ID> ids) {
-        Integer count = 0;
+    public Integer delete(T t) {
+        int count = 0;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
+
         try {
-            for (ID item: ids) {
-                T t = (T) session.get(persistenceClass, item);
-                session.delete(t);
-                count++;
-            }
+            session.delete(t);
             transaction.commit();
+            count = 1;
         } catch (HibernateException e) {
+            count = 0;
             transaction.rollback();
             log.error(e.getMessage(), e);
             throw e;

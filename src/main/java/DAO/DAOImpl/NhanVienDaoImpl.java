@@ -4,6 +4,7 @@ import Contant.CoreConstant;
 import DAO.Abstract.AbstractDao;
 import DAO.DAO.NhanVienDao;
 import DTO.NhanVienDTO;
+import DTO.PhongBanDTO;
 import Entity.NhanVien;
 import Entity.PhongBan;
 import EntityBeanUtil.NhanVienBeanUtil;
@@ -16,10 +17,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
+import java.util.*;
 
 public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements NhanVienDao {
     @Override
@@ -60,6 +58,7 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
         return null;
     }
 
+
     @Override
     public String getLastID() {
         NhanVien nv = new NhanVien();
@@ -83,9 +82,53 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
         return nv.getManv();
     }
 
-    public NhanVienDTO getById(String id) {
-        NhanVien nhanVien = findById(id);
-        NhanVienDTO nhanVienDTO = NhanVienBeanUtil.entity2Dto(nhanVien);
-        return nhanVienDTO;
+    public List<NhanVien> getByPhongBan(PhongBan phongBan) {
+        List<NhanVien> nhanVienList = new ArrayList<>();
+        String mapb = phongBan.getMapb();
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        try {
+            StringBuilder sql1 = new StringBuilder("from ");
+            sql1.append(getPersistenceClassName()).append(" where mapb = :mapb ");
+            Query query1 = session.createQuery(sql1.toString());
+            query1.setParameter("mapb", mapb);
+            nhanVienList = query1.list();
+
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return nhanVienList;
+    }
+
+    public List<NhanVien> searchByProperty(Map<String, Object> property, PhongBan phongBan) {
+        List<NhanVien> nhanVienList = new ArrayList<>();
+        String mapb = phongBan.getMapb();
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        Object[] nameQuery = HibernateUtil.buildNameQuerySearch(property);
+
+        try {
+            StringBuilder sql1 = new StringBuilder("from ");
+            sql1.append(getPersistenceClassName()).append(" where (mapb = :mapb) AND ( ").append(nameQuery[0]).append(" )");
+            Query query1 = session.createQuery(sql1.toString());
+            query1.setParameter("mapb", mapb);
+            setParameterToQuery(nameQuery, query1);
+            nhanVienList = query1.list();
+
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return nhanVienList;
     }
 }

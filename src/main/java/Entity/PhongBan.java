@@ -13,10 +13,10 @@ public class PhongBan {
     @Column(name = "TENPB")
     private String tenpb;
 
-    @OneToMany(mappedBy = "phongBan" ,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "phongBan" ,fetch = FetchType.LAZY)
     private List<NhanVien>  nhanVienList;
 
-    @OneToMany(mappedBy = "phongBan",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "phongBan",fetch = FetchType.LAZY)
     private List<PhieuBanGiao> phieuBanGiaoList;
 
     public String getMapb() {

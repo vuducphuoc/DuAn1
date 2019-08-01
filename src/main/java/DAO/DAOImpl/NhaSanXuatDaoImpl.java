@@ -11,7 +11,6 @@ import java.util.List;
 
 public class NhaSanXuatDaoImpl extends AbstractDao<Integer, NhaSanXuat> implements NhaSanXuatDao {
 
-
     @Override
     public List<NhaSanXuatDTO> getAll() {
         List<NhaSanXuat> nhaSanXuatList = findAll();

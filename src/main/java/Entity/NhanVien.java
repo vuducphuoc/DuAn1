@@ -40,6 +40,17 @@ public class NhanVien {
     public NhanVien () {
 
     }
+    public NhanVien(String manv, String tennv, boolean gioitinh, Date ngaysinh, String diachi, String taikhoan, String matkhau, boolean vaitro, PhongBan phongBan) {
+        this.manv = manv;
+        this.tennv = tennv;
+        this.gioitinh = gioitinh;
+        this.ngaysinh = ngaysinh;
+        this.diachi = diachi;
+        this.taikhoan = taikhoan;
+        this.matkhau = matkhau;
+        this.vaitro = vaitro;
+        this.phongBan = phongBan;
+    }
 
     public String getManv() {
         return manv;
@@ -111,5 +122,10 @@ public class NhanVien {
 
     public void setPhongBan(PhongBan phongBan) {
         this.phongBan = phongBan;
+    }
+
+    @Override
+    public String toString() {
+        return tennv + " - " + manv;
     }
 }

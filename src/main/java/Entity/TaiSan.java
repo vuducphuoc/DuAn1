@@ -33,7 +33,7 @@ public class TaiSan {
     @JoinColumn(name = "MAPL")
     private PhanLoai phanLoai;
 
-    @OneToMany(mappedBy = "taiSan",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "taiSan", fetch = FetchType.LAZY)
     private List<PhieuBanGiao> phieuBanGiaoList;
 
     public String getMats() {
