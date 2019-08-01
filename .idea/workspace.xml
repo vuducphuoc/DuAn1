@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/Frame/Panel/BaoCaoThongKe.java" line="346" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/Frame/Panel/BaoCaoThongKe.java" line="349" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b4c9377-866e-40f6-b070-4700ef7fbe21" name="Default Changelist" comment="" />
@@ -62,213 +62,113 @@
     <favorites_list name="QuanLyTaiSan" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyNhanVien.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="710" column="5" lean-forward="true" selection-start-line="691" selection-start-column="4" selection-end-line="710" selection-end-column="5" />
-              <folding>
-                <element signature="e#665#1370#0" />
-                <element signature="e#703#795#0" />
-                <element signature="e#830#931#0" />
-                <element signature="e#966#1067#0" />
-                <element signature="e#1102#1203#0" />
-                <element signature="e#1247#1348#0" />
-                <element signature="e#1376#1652#0" />
-                <element signature="e#1698#1726#0" />
-                <element signature="e#2274#2307#0" />
-                <element signature="e#3302#3343#0" />
-                <element signature="e#3972#4007#0" />
-                <element signature="e#4612#4649#0" />
-                <element signature="class#4814:5418" />
-                <element signature="method#prepareRenderer#0;class#4814:5418" />
-                <element signature="e#5204#5284#1" />
-                <element signature="e#5290#5368#1" />
-                <element signature="e#5884#5921#0" />
-                <element signature="class#6119:6721" />
-                <element signature="method#prepareRenderer#0;class#6119:6721" />
-                <element signature="e#6507#6585#1" />
-                <element signature="e#6591#6671#1" />
-                <element signature="e#7399#7433#0" />
-                <element signature="e#7982#8011#0" />
-                <element signature="e#10828#15369#0" />
-                <element signature="e#15375#22537#0" />
-                <element signature="class#15445:16248" />
-                <element signature="method#mouseClicked#0;class#15445:16248" />
-                <element signature="method#mousePressed#0;class#15445:16248" />
-                <element signature="method#mouseReleased#0;class#15445:16248" />
-                <element signature="method#mouseEntered#0;class#15445:16248" />
-                <element signature="method#mouseExited#0;class#15445:16248" />
-                <element signature="class#16293:18057" />
-                <element signature="method#mouseClicked#0;class#16293:18057" />
-                <element signature="e#16451#16585#1" />
-                <element signature="e#16632#17034#1" />
-                <element signature="e#16746#16933#1" />
-                <element signature="e#16939#17016#1" />
-                <element signature="e#17040#17632#1" />
-                <element signature="e#17154#17341#1" />
-                <element signature="e#17347#17614#1" />
-                <element signature="method#mousePressed#0;class#16293:18057" />
-                <element signature="method#mouseReleased#0;class#16293:18057" />
-                <element signature="method#mouseEntered#0;class#16293:18057" />
-                <element signature="method#mouseExited#0;class#16293:18057" />
-                <element signature="e#18696#18801#1" />
-                <element signature="class#19382:20777" />
-                <element signature="method#insertUpdate#0;class#19382:20777" />
-                <element signature="e#19543#19658#1" />
-                <element signature="e#19664#19816#1" />
-                <element signature="method#removeUpdate#0;class#19382:20777" />
-                <element signature="e#19972#20500#1" />
-                <element signature="e#20125#20299#1" />
-                <element signature="e#20305#20482#1" />
-                <element signature="e#20506#20658#1" />
-                <element signature="method#changedUpdate#0;class#19382:20777" />
-                <element signature="class#20826:21359" />
-                <element signature="method#keyTyped#0;class#20826:21359" />
-                <element signature="method#keyPressed#0;class#20826:21359" />
-                <element signature="e#21131#21247#1" />
-                <element signature="method#keyReleased#0;class#20826:21359" />
-                <element signature="class#21529:22027" />
-                <element signature="method#keyTyped#0;class#21529:22027" />
-                <element signature="method#keyPressed#0;class#21529:22027" />
-                <element signature="e#21758#21916#1" />
-                <element signature="method#keyReleased#0;class#21529:22027" />
-                <element signature="e#22364#22480#1" />
-                <element signature="e#25254#25846#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyTaiSan.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="605" column="5" lean-forward="true" selection-start-line="592" selection-start-column="4" selection-end-line="605" selection-end-column="5" />
-              <folding>
-                <element signature="e#842#941#0" />
-                <element signature="e#976#1075#0" />
-                <element signature="e#1110#1209#0" />
-                <element signature="e#1253#1352#0" />
-                <element signature="e#1723#1757#0" />
-                <element signature="e#3092#3133#0" />
-                <element signature="e#3903#3983#1" />
-                <element signature="e#3988#4066#1" />
-                <element signature="e#5125#5161#0" />
-                <element signature="method#prepareRenderer#0;class#5360:5896" />
-                <element signature="e#6554#6588#0" />
-                <element signature="e#6597#6676#0" />
-                <element signature="e#7786#7815#0" />
-                <element signature="e#9250#9290#0" />
-                <element signature="class#16052:16688" />
-                <element signature="method#mousePressed#0;class#16052:16688" />
-                <element signature="method#mouseReleased#0;class#16052:16688" />
-                <element signature="method#mouseEntered#0;class#16052:16688" />
-                <element signature="method#mouseExited#0;class#16052:16688" />
-                <element signature="class#16733:17501" />
-                <element signature="method#mousePressed#0;class#16733:17501" />
-                <element signature="method#mouseReleased#0;class#16733:17501" />
-                <element signature="method#mouseEntered#0;class#16733:17501" />
-                <element signature="method#mouseExited#0;class#16733:17501" />
-                <element signature="e#18406#18503#0" />
-                <element signature="e#18592#19112#0" />
-                <element signature="e#19118#19535#0" />
-                <element signature="e#18724#18830#0" />
-                <element signature="e#19605#19745#0" />
-                <element signature="e#19751#20176#0" />
-                <element signature="e#20182#20579#0" />
-                <element signature="e#20585#21235#0" />
-                <element signature="e#22166#22202#1" />
-                <element signature="e#22214#22794#0" />
-                <element signature="e#23202#24793#0" />
-                <element signature="e#24948#25301#0" />
-                <element signature="e#25182#25295#1" />
-                <element signature="e#25225#25285#1" />
-                <element signature="e#25307#26071#0" />
-                <element signature="e#26077#26683#0" />
-                <element signature="e#26208#26677#0" />
-                <element signature="e#27261#27829#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Test/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyPhieuBanGiao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="298" column="48" selection-start-line="298" selection-start-column="47" selection-end-line="298" selection-end-column="48" />
+            <state relative-caret-position="255">
+              <caret line="470" column="4" selection-start-line="470" selection-start-column="4" selection-end-line="470" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#QuanLyPhieuBanGiao#0;class#QuanLyPhieuBanGiao#0" />
-                <element signature="e#332#431#0" />
-                <element signature="e#466#565#0" />
-                <element signature="e#600#699#0" />
-                <element signature="e#743#842#0" />
-                <element signature="e#1021#1081#0" />
-                <element signature="method#initComponent#0;class#QuanLyPhieuBanGiao#0" />
-                <element signature="e#1571#1600#0" />
-                <element signature="e#2031#2111#1" />
-                <element signature="e#2116#2194#1" />
-                <element signature="class#3514:4050" />
-                <element signature="method#prepareRenderer#0;class#3514:4050" />
-                <element signature="e#4708#4742#0" />
-                <element signature="e#4751#4830#0" />
-                <element signature="e#7681#7721#0" />
-                <element signature="method#addControls#0;class#QuanLyPhieuBanGiao#0" />
-                <element signature="e#12185#12186#0" expanded="true" />
-                <element signature="e#12236#12237#0" expanded="true" />
-                <element signature="e#11959#11991#0" />
-                <element signature="e#11959#12154#0" />
-                <element signature="e#12275#12581#0" />
-                <element signature="e#12601#12703#0" />
-                <element signature="e#13512#13970#0" />
-                <element signature="e#10543#11135#0" />
-                <element signature="e#14381#14987#0" />
-                <element signature="e#15271#15272#0" expanded="true" />
-                <element signature="e#15301#15302#0" expanded="true" />
-                <element signature="e#15108#15611#0" />
-                <element signature="e#15083#15488#0" />
-                <element signature="e#16050#16094#0" />
-                <element signature="e#15056#15439#0" />
-                <element signature="method#getModelPhieuBanGiao#0;class#QuanLyPhieuBanGiao#0" />
-                <element signature="n#!!doc;n#sttPhongBan#0;n#QuanLyPhieuBanGiao#0" />
+                <element signature="e#623#1349#0" />
+                <element signature="e#665#757#0" />
+                <element signature="e#792#891#0" />
+                <element signature="e#926#1025#0" />
+                <element signature="e#1060#1159#0" />
+                <element signature="e#1203#1302#0" />
+                <element signature="e#1355#1729#0" />
+                <element signature="e#1735#9562#0" />
+                <element signature="e#2244#2273#0" />
+                <element signature="e#3608#3646#0" />
+                <element signature="class#3811:4471" />
+                <element signature="method#prepareRenderer#0;class#3811:4471" />
+                <element signature="e#4258#4338#1" />
+                <element signature="e#4343#4421#1" />
+                <element signature="e#5479#5522#0" />
+                <element signature="class#5744:6286" />
+                <element signature="method#prepareRenderer#0;class#5744:6286" />
+                <element signature="e#6962#6996#0" />
+                <element signature="e#7005#7084#0" />
+                <element signature="e#8224#8264#0" />
+                <element signature="e#9568#12387#0" />
+                <element signature="e#12393#15088#0" />
+                <element signature="class#13481:14356" />
+                <element signature="method#mouseClicked#0;class#13481:14356" />
+                <element signature="method#mousePressed#0;class#13481:14356" />
+                <element signature="method#mouseReleased#0;class#13481:14356" />
+                <element signature="method#mouseEntered#0;class#13481:14356" />
+                <element signature="method#mouseExited#0;class#13481:14356" />
+                <element signature="class#14405:15080" />
+                <element signature="method#mouseClicked#0;class#14405:15080" />
+                <element signature="method#mousePressed#0;class#14405:15080" />
+                <element signature="method#mouseReleased#0;class#14405:15080" />
+                <element signature="method#mouseEntered#0;class#14405:15080" />
+                <element signature="method#mouseExited#0;class#14405:15080" />
+                <element signature="e#15094#15144#0" />
+                <element signature="e#15094#15328#0" />
+                <element signature="e#15334#15450#0" />
+                <element signature="e#15456#15783#0" />
+                <element signature="e#15610#15777#1" />
+                <element signature="e#15719#15767#1" />
+                <element signature="e#15789#16194#0" />
+                <element signature="e#15914#16026#1" />
+                <element signature="e#16074#16188#1" />
+                <element signature="e#16200#16379#0" />
+                <element signature="e#16315#16373#1" />
+                <element signature="e#16385#16802#0" />
+                <element signature="e#16511#16771#1" />
+                <element signature="e#16608#16761#1" />
+                <element signature="e#16808#17057#0" />
+                <element signature="e#16899#16965#1" />
+                <element signature="e#17084#17116#0" />
+                <element signature="e#17084#17438#0" />
+                <element signature="e#17310#17432#1" />
+                <element signature="e#17355#17422#1" />
+                <element signature="e#17444#17768#0" />
+                <element signature="e#17645#17762#1" />
+                <element signature="e#17694#17752#1" />
+                <element signature="e#17774#18131#0" />
+                <element signature="e#17991#18125#1" />
+                <element signature="e#18137#18718#0" />
+                <element signature="e#18272#18712#1" />
+                <element signature="e#18453#18702#1" />
+                <element signature="e#18745#18778#0" />
+                <element signature="e#18745#19230#0" />
+                <element signature="e#19236#19889#0" />
+                <element signature="e#19367#19883#0" />
+                <element signature="e#19895#20222#0" />
+                <element signature="e#20249#20689#0" />
+                <element signature="e#20355#20683#1" />
+                <element signature="e#20781#21326#0" />
+                <element signature="e#20887#21278#1" />
+                <element signature="e#21284#21320#1" />
+                <element signature="e#21332#21376#0" />
+                <element signature="e#21332#21966#0" />
+                <element signature="e#21494#21776#1" />
+                <element signature="e#21609#21660#1" />
+                <element signature="e#21682#21774#1" />
+                <element signature="e#21852#22038#1" />
+                <element signature="e#21925#22024#1" />
+                <element signature="e#21782#21960#1" />
+                <element signature="e#21972#22435#0" />
+                <element signature="e#22183#22284#0" />
+                <element signature="e#22310#22354#0" />
+                <element signature="e#22462#22494#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/PhieuBanGiaoDaoImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Login/LoginFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="113">
+              <caret line="119" column="72" selection-start-line="119" selection-start-column="72" selection-end-line="119" selection-end-column="72" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getByPhongBan#0;class#PhieuBanGiaoDaoImpl#0" />
+                <element signature="method#showWindows#0;class#LoginFrame#0" />
+                <element signature="method#addEvents#0;class#LoginFrame#0" />
+                <element signature="method#login#0;class#LoginFrame#0" />
+                <element signature="n#!!doc;n#progressBar#0;n#LoginFrame#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Main/MainFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="100" column="52" lean-forward="true" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -290,15 +190,14 @@
       <find>setSta</find>
       <find>btnCh</find>
       <find>fillTo</find>
+      <find>mouse</find>
+      <find>setMo</find>
+      <find>setmo</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/DTO/PhongBanDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DTO/TaiSanDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/PhongBanDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DTO/NhanVienDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/NhanVienDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DTO/ThongKe1DTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NamedStoredProcedureQueries.java" />
@@ -309,42 +208,46 @@
         <option value="/e2072272/4650bd9e-97a6-44c0-86e2-117227d9ec63/database/QuanLyTaiSan/schema/dbo/routine/sp_thongketaisan_2.sql" />
         <option value="/e2072272/4650bd9e-97a6-44c0-86e2-117227d9ec63/database/QuanLyTaiSan/schema/dbo/routine/sp_thongketaisan_1.sql" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/ThongKe1DaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/BaoCaoThongKe.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/MoneyUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/Contant/CoreConstant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Frame/Login/LoginFrame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity/PhieuBanGiao.java" />
         <option value="/e2072272/4650bd9e-97a6-44c0-86e2-117227d9ec63/database/QuanLyTaiSan/schema/dbo/routine/sp_hetkhauhao.sql" />
         <option value="$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhieuBanGiaoBeanUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/EntityBeanUtil/NhaSanXuatBeanUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/TaiSanDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/NhaSanXuatDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DTO/NhaSanXuatDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EntityBeanUtil/TaiSanBeanUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhanLoaiBeanUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/PhongBanDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyPhongBan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity/PhongBan.java" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/QuocGia.java" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/PhanLoai.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NhaSanXuatDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhongBanBeanUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/HibernateUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/NhaSanXuat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity/NhanVien.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NhanVienDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/PhieuBanGiaoDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/PhieuBanGiaoDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/Abstract/GenericDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/Abstract/AbstractDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyNhanVien.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity/TaiSan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/TaiSanDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Frame/Main/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/Test/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/TaiSan.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/PhongBan.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/NhaSanXuatDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/PhongBanDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/PhongBanDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/DAO/TaiSanDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NhaSanXuatDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/DAOImpl/TaiSanDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyPhongBan.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Main/JDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/NhanVien.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyNhanVien.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/BaoCaoThongKe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/DanhMucKhac.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Login/ChangePassFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/PhieuBanGiao.java" />
         <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyTaiSan.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Main/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frame/Login/LoginFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyPhieuBanGiao.java" />
       </list>
     </option>
@@ -378,16 +281,17 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="20" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="x" value="85" />
+    <option name="y" value="25" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -419,34 +323,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuanLyTaiSan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuanLyTaiSan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-              <item name="Abstract" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuanLyTaiSan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuanLyTaiSan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuanLyTaiSan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="QuanLyTaiSan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-              <item name="DAOImpl" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLyTaiSan" type="b2602c69:ProjectViewProjectNode" />
@@ -463,7 +340,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Frame" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLyTaiSan" type="b2602c69:ProjectViewProjectNode" />
@@ -471,7 +348,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="Frame" type="462c0819:PsiDirectoryNode" />
+              <item name="Panel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuanLyTaiSan" type="b2602c69:ProjectViewProjectNode" />
@@ -484,16 +362,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlserver" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564644321614" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564655601928" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SOF204-DAM/Assignment/PolyPro APT 25-06-2019" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -503,22 +381,23 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\Frame\Login" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\Utils" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\DAO\Abstract" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="DAO.DAOImpl" />
       <recent name="DAO.DAO" />
       <recent name="Contant" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java" />
-      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\Utils" />
-      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\DAO\Abstract" />
-      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -639,18 +518,19 @@
       <workItem from="1564464807274" duration="5497000" />
       <workItem from="1564486380761" duration="4656000" />
       <workItem from="1564556041640" duration="6903000" />
-      <workItem from="1564622830640" duration="15360000" />
+      <workItem from="1564622830640" duration="25866000" />
+      <workItem from="1564658675609" duration="3536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157853000" />
+    <option name="totallyTimeSpent" value="171895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.27382752" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.2322239" />
       <window_info id="Structure" order="1" sideWeight="0.501182" side_tool="true" weight="0.22844176" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -661,7 +541,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.13056836" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.40245774" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.31643626" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -688,126 +568,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/DTO/PhongBanDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/BaoCaoThongKe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="288" column="30" selection-start-line="288" selection-start-column="30" selection-end-line="288" selection-end-column="30" />
-          <folding>
-            <element signature="method#addControls#0;class#BaoCaoThongKe#0" />
-            <element signature="method#addEvents#0;class#BaoCaoThongKe#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DTO/TaiSanDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding>
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/DialogUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/DanhMucKhac.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="32" column="15" lean-forward="true" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/PhanLoaiDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/MoneyUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/SingletonDaoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/TaiSanBeanUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/QuocGia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/PhieuBanGiao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/PhongBan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/PhanLoai.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DTO/NhaSanXuatDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding>
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DTO/PhanLoaiDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -815,44 +575,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/NhaSanXuatDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NhaSanXuatDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyPhongBan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="130" column="18" lean-forward="true" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initComponents#0;class#QuanLyPhongBan#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhongBanBeanUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhongBanBeanUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -864,38 +587,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/NhaSanXuatBeanUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhanLoaiBeanUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="method#entity2Dto#0;class#PhanLoaiBeanUtil#0" />
-            <element signature="method#dto2Entity#0;class#PhanLoaiBeanUtil#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/NhaSanXuatBeanUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhanLoaiBeanUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/ThongKe1DaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/PhongBanDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="method#getAll#0;class#PhongBanDaoImpl#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -928,21 +625,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Login/LoginFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="62" column="71" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="71" />
-          <folding>
-            <element signature="method#LoginFrame#0;class#LoginFrame#0" />
-            <element signature="method#showWindows#0;class#LoginFrame#0" />
-            <element signature="method#addControls#0;class#LoginFrame#0" />
-            <element signature="e#4534#4622#0" expanded="true" />
-            <element signature="e#5208#5294#0" expanded="true" />
-            <element signature="n#!!doc;n#progressBar#0;n#LoginFrame#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/lang/Object.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -972,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/NhanVien.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DTO/NhanVienDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -986,20 +661,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/NhanVienBeanUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/PhieuBanGiaoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/NhanVienBeanUtil.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/awt/Color.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-408">
@@ -1021,150 +683,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NhanVienDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="82" column="5" lean-forward="true" selection-start-line="62" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
-          <folding>
-            <element signature="method#checkLogin#0;class#NhanVienDaoImpl#0" />
-            <element signature="method#getLastID#0;class#NhanVienDaoImpl#0" />
-            <element signature="method#getByPhongBan#0;class#NhanVienDaoImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/NhanVienDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Abstract/AbstractDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#update#0;class#AbstractDao#0" />
-            <element signature="method#save#0;class#AbstractDao#0" />
-            <element signature="method#findById#0;class#AbstractDao#0" />
-            <element signature="method#delete#0;class#AbstractDao#0" />
-            <element signature="method#findEqualUnique#0;class#AbstractDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/TaiSan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/TaiSanDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="64" column="40" lean-forward="true" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
-          <folding>
-            <element signature="method#getByID#0;class#TaiSanDaoImpl#0" />
-            <element signature="method#getByPhongBan#0;class#TaiSanDaoImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Test/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Main/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="100" column="52" lean-forward="true" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyNhanVien.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="710" column="5" lean-forward="true" selection-start-line="691" selection-start-column="4" selection-end-line="710" selection-end-column="5" />
-          <folding>
-            <element signature="e#665#1370#0" />
-            <element signature="e#703#795#0" />
-            <element signature="e#830#931#0" />
-            <element signature="e#966#1067#0" />
-            <element signature="e#1102#1203#0" />
-            <element signature="e#1247#1348#0" />
-            <element signature="e#1376#1652#0" />
-            <element signature="e#1698#1726#0" />
-            <element signature="e#2274#2307#0" />
-            <element signature="e#3302#3343#0" />
-            <element signature="e#3972#4007#0" />
-            <element signature="e#4612#4649#0" />
-            <element signature="class#4814:5418" />
-            <element signature="method#prepareRenderer#0;class#4814:5418" />
-            <element signature="e#5204#5284#1" />
-            <element signature="e#5290#5368#1" />
-            <element signature="e#5884#5921#0" />
-            <element signature="class#6119:6721" />
-            <element signature="method#prepareRenderer#0;class#6119:6721" />
-            <element signature="e#6507#6585#1" />
-            <element signature="e#6591#6671#1" />
-            <element signature="e#7399#7433#0" />
-            <element signature="e#7982#8011#0" />
-            <element signature="e#10828#15369#0" />
-            <element signature="e#15375#22537#0" />
-            <element signature="class#15445:16248" />
-            <element signature="method#mouseClicked#0;class#15445:16248" />
-            <element signature="method#mousePressed#0;class#15445:16248" />
-            <element signature="method#mouseReleased#0;class#15445:16248" />
-            <element signature="method#mouseEntered#0;class#15445:16248" />
-            <element signature="method#mouseExited#0;class#15445:16248" />
-            <element signature="class#16293:18057" />
-            <element signature="method#mouseClicked#0;class#16293:18057" />
-            <element signature="e#16451#16585#1" />
-            <element signature="e#16632#17034#1" />
-            <element signature="e#16746#16933#1" />
-            <element signature="e#16939#17016#1" />
-            <element signature="e#17040#17632#1" />
-            <element signature="e#17154#17341#1" />
-            <element signature="e#17347#17614#1" />
-            <element signature="method#mousePressed#0;class#16293:18057" />
-            <element signature="method#mouseReleased#0;class#16293:18057" />
-            <element signature="method#mouseEntered#0;class#16293:18057" />
-            <element signature="method#mouseExited#0;class#16293:18057" />
-            <element signature="e#18696#18801#1" />
-            <element signature="class#19382:20777" />
-            <element signature="method#insertUpdate#0;class#19382:20777" />
-            <element signature="e#19543#19658#1" />
-            <element signature="e#19664#19816#1" />
-            <element signature="method#removeUpdate#0;class#19382:20777" />
-            <element signature="e#19972#20500#1" />
-            <element signature="e#20125#20299#1" />
-            <element signature="e#20305#20482#1" />
-            <element signature="e#20506#20658#1" />
-            <element signature="method#changedUpdate#0;class#19382:20777" />
-            <element signature="class#20826:21359" />
-            <element signature="method#keyTyped#0;class#20826:21359" />
-            <element signature="method#keyPressed#0;class#20826:21359" />
-            <element signature="e#21131#21247#1" />
-            <element signature="method#keyReleased#0;class#20826:21359" />
-            <element signature="class#21529:22027" />
-            <element signature="method#keyTyped#0;class#21529:22027" />
-            <element signature="method#keyPressed#0;class#21529:22027" />
-            <element signature="e#21758#21916#1" />
-            <element signature="method#keyReleased#0;class#21529:22027" />
-            <element signature="e#22364#22480#1" />
-            <element signature="e#25254#25846#0" />
           </folding>
         </state>
       </provider>
@@ -1180,96 +704,453 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/TaiSan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="112" column="25" lean-forward="true" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/PhongBan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding>
+            <element signature="e#1166#1167#0" expanded="true" />
+            <element signature="e#1203#1204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/awt/Component.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="839" column="5" lean-forward="true" selection-start-line="839" selection-start-column="5" selection-end-line="839" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EntityBeanUtil/PhieuBanGiaoBeanUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/NhanVienDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NhanVienDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
+          <folding>
+            <element signature="method#checkLogin#0;class#NhanVienDaoImpl#0" />
+            <element signature="method#getLastID#0;class#NhanVienDaoImpl#0" />
+            <element signature="method#getByPhongBan#0;class#NhanVienDaoImpl#0" />
+            <element signature="method#searchByProperty#0;class#NhanVienDaoImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/NhaSanXuatDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/PhanLoaiDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/PhongBanDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/PhongBanDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/QuocGiaDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/QuocGiaDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/TaiSanDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/NhaSanXuatDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAOImpl/TaiSanDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="method#getLastID#0;class#TaiSanDaoImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyPhongBan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="130" column="36" lean-forward="true" selection-start-line="130" selection-start-column="36" selection-end-line="130" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initComponents#0;class#QuanLyPhongBan#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/NhanVien.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+          <folding>
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1429#1430#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1565#1566#0" expanded="true" />
+            <element signature="e#1631#1632#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#1870#1871#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#2012#2013#0" expanded="true" />
+            <element signature="e#2078#2079#0" expanded="true" />
+            <element signature="e#2166#2167#0" expanded="true" />
+            <element signature="e#2230#2231#0" expanded="true" />
+            <element signature="e#2314#2315#0" expanded="true" />
+            <element signature="e#2376#2377#0" expanded="true" />
+            <element signature="e#2457#2458#0" expanded="true" />
+            <element signature="e#2525#2526#0" expanded="true" />
+            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#2704#2705#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Abstract/AbstractDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="49" column="24" lean-forward="true" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#save#0;class#AbstractDao#0" />
+            <element signature="method#findById#0;class#AbstractDao#0" />
+            <element signature="method#delete#0;class#AbstractDao#0" />
+            <element signature="method#findEqualUnique#0;class#AbstractDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/DanhMucKhac.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1063">
+          <caret line="149" column="36" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/BaoCaoThongKe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="341" column="36" selection-start-line="341" selection-start-column="36" selection-end-line="341" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Main/JDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115">
+          <caret line="60" column="48" lean-forward="true" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyNhanVien.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="278" lean-forward="true" selection-start-line="278" selection-end-line="278" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO/PhieuBanGiaoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyNhaSanXuat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="125" column="30" lean-forward="true" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
+          <folding>
+            <element signature="method#QuanLyNhaSanXuat#0;class#QuanLyNhaSanXuat#0" />
+            <element signature="e#264#356#0" />
+            <element signature="e#391#494#0" />
+            <element signature="e#529#632#0" />
+            <element signature="e#667#770#0" />
+            <element signature="e#814#917#0" />
+            <element signature="method#initComponents#0;class#QuanLyNhaSanXuat#0" />
+            <element signature="method#addControls#0;class#QuanLyNhaSanXuat#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyTaiSan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="605" column="5" lean-forward="true" selection-start-line="592" selection-start-column="4" selection-end-line="605" selection-end-column="5" />
+        <state relative-caret-position="96">
+          <caret line="574" column="134" selection-start-line="574" selection-start-column="134" selection-end-line="574" selection-end-column="134" />
           <folding>
-            <element signature="e#842#941#0" />
-            <element signature="e#976#1075#0" />
-            <element signature="e#1110#1209#0" />
-            <element signature="e#1253#1352#0" />
-            <element signature="e#1723#1757#0" />
-            <element signature="e#3092#3133#0" />
-            <element signature="e#3903#3983#1" />
-            <element signature="e#3988#4066#1" />
-            <element signature="e#5125#5161#0" />
-            <element signature="method#prepareRenderer#0;class#5360:5896" />
-            <element signature="e#6554#6588#0" />
-            <element signature="e#6597#6676#0" />
-            <element signature="e#7786#7815#0" />
-            <element signature="e#9250#9290#0" />
-            <element signature="class#16052:16688" />
-            <element signature="method#mousePressed#0;class#16052:16688" />
-            <element signature="method#mouseReleased#0;class#16052:16688" />
-            <element signature="method#mouseEntered#0;class#16052:16688" />
-            <element signature="method#mouseExited#0;class#16052:16688" />
-            <element signature="class#16733:17501" />
-            <element signature="method#mousePressed#0;class#16733:17501" />
-            <element signature="method#mouseReleased#0;class#16733:17501" />
-            <element signature="method#mouseEntered#0;class#16733:17501" />
-            <element signature="method#mouseExited#0;class#16733:17501" />
-            <element signature="e#18406#18503#0" />
-            <element signature="e#18592#19112#0" />
-            <element signature="e#19118#19535#0" />
-            <element signature="e#18724#18830#0" />
-            <element signature="e#19605#19745#0" />
-            <element signature="e#19751#20176#0" />
-            <element signature="e#20182#20579#0" />
-            <element signature="e#20585#21235#0" />
-            <element signature="e#22166#22202#1" />
-            <element signature="e#22214#22794#0" />
-            <element signature="e#23202#24793#0" />
-            <element signature="e#24948#25301#0" />
-            <element signature="e#25182#25295#1" />
-            <element signature="e#25225#25285#1" />
-            <element signature="e#25307#26071#0" />
-            <element signature="e#26077#26683#0" />
-            <element signature="e#26208#26677#0" />
-            <element signature="e#27261#27829#0" />
+            <element signature="e#709#1429#0" />
+            <element signature="e#745#837#0" />
+            <element signature="e#872#971#0" />
+            <element signature="e#1006#1105#0" />
+            <element signature="e#1140#1239#0" />
+            <element signature="e#1283#1382#0" />
+            <element signature="e#1435#1736#0" />
+            <element signature="e#1742#11165#0" />
+            <element signature="e#1782#1816#0" />
+            <element signature="e#3121#3162#0" />
+            <element signature="class#3332:3994" />
+            <element signature="method#prepareRenderer#0;class#3332:3994" />
+            <element signature="e#3781#3861#1" />
+            <element signature="e#3866#3944#1" />
+            <element signature="e#5022#5058#0" />
+            <element signature="class#5264:5800" />
+            <element signature="method#prepareRenderer#0;class#5264:5800" />
+            <element signature="e#6458#6492#0" />
+            <element signature="e#6501#6580#0" />
+            <element signature="e#7690#7719#0" />
+            <element signature="e#9154#9194#0" />
+            <element signature="e#11171#15239#0" />
+            <element signature="e#15245#17955#0" />
+            <element signature="class#15349:15973" />
+            <element signature="method#mouseClicked#0;class#15349:15973" />
+            <element signature="method#mousePressed#0;class#15349:15973" />
+            <element signature="method#mouseReleased#0;class#15349:15973" />
+            <element signature="method#mouseEntered#0;class#15349:15973" />
+            <element signature="method#mouseExited#0;class#15349:15973" />
+            <element signature="class#16064:16828" />
+            <element signature="method#mouseClicked#0;class#16064:16828" />
+            <element signature="method#mousePressed#0;class#16064:16828" />
+            <element signature="method#mouseReleased#0;class#16064:16828" />
+            <element signature="method#mouseEntered#0;class#16064:16828" />
+            <element signature="method#mouseExited#0;class#16064:16828" />
+            <element signature="e#17961#18172#0" />
+            <element signature="e#18261#18716#0" />
+            <element signature="e#18423#18710#1" />
+            <element signature="e#18524#18700#1" />
+            <element signature="e#18583#18653#1" />
+            <element signature="e#18722#19091#0" />
+            <element signature="e#18835#18935#1" />
+            <element signature="e#18983#19085#1" />
+            <element signature="e#19097#19266#0" />
+            <element signature="e#19212#19260#1" />
+            <element signature="e#19336#19471#0" />
+            <element signature="e#19477#19861#0" />
+            <element signature="e#19611#19830#1" />
+            <element signature="e#19685#19820#1" />
+            <element signature="e#19867#20279#0" />
+            <element signature="e#20136#20273#1" />
+            <element signature="e#21032#21493#0" />
+            <element signature="e#21144#21487#1" />
+            <element signature="e#21499#22002#0" />
+            <element signature="e#21607#21954#1" />
+            <element signature="e#21960#21996#1" />
+            <element signature="e#22008#22548#0" />
+            <element signature="e#22554#23738#0" />
+            <element signature="e#22670#23402#1" />
+            <element signature="e#22724#22779#1" />
+            <element signature="e#22823#22878#1" />
+            <element signature="e#22884#22939#1" />
+            <element signature="e#23408#23732#1" />
+            <element signature="e#23829#24182#0" />
+            <element signature="e#24063#24176#1" />
+            <element signature="e#24106#24166#1" />
+            <element signature="e#24188#24868#0" />
+            <element signature="e#24874#25480#0" />
+            <element signature="e#25005#25474#0" />
+            <element signature="e#25486#25891#0" />
+            <element signature="e#25897#26443#0" />
+            <element signature="e#26027#26390#1" />
+            <element signature="e#26262#26309#1" />
+            <element signature="e#26396#26437#1" />
+            <element signature="e#26449#26481#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/PhieuBanGiao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Main/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="method#signOut#0;class#MainFrame#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Login/ChangePassFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="122" column="22" lean-forward="true" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc;n#showWindows#0;n#ChangePassFrame#0" expanded="true" />
+            <element signature="method#addEvents#0;class#ChangePassFrame#0" />
+            <element signature="method#changePassword#0;class#ChangePassFrame#0" />
+            <element signature="method#checkInfo#0;class#ChangePassFrame#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Login/LoginFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="119" column="72" selection-start-line="119" selection-start-column="72" selection-end-line="119" selection-end-column="72" />
+          <folding>
+            <element signature="method#showWindows#0;class#LoginFrame#0" />
+            <element signature="method#addEvents#0;class#LoginFrame#0" />
+            <element signature="method#login#0;class#LoginFrame#0" />
+            <element signature="n#!!doc;n#progressBar#0;n#LoginFrame#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Frame/Panel/QuanLyPhieuBanGiao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="298" column="48" selection-start-line="298" selection-start-column="47" selection-end-line="298" selection-end-column="48" />
+        <state relative-caret-position="255">
+          <caret line="470" column="4" selection-start-line="470" selection-start-column="4" selection-end-line="470" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#QuanLyPhieuBanGiao#0;class#QuanLyPhieuBanGiao#0" />
-            <element signature="e#332#431#0" />
-            <element signature="e#466#565#0" />
-            <element signature="e#600#699#0" />
-            <element signature="e#743#842#0" />
-            <element signature="e#1021#1081#0" />
-            <element signature="method#initComponent#0;class#QuanLyPhieuBanGiao#0" />
-            <element signature="e#1571#1600#0" />
-            <element signature="e#2031#2111#1" />
-            <element signature="e#2116#2194#1" />
-            <element signature="class#3514:4050" />
-            <element signature="method#prepareRenderer#0;class#3514:4050" />
-            <element signature="e#4708#4742#0" />
-            <element signature="e#4751#4830#0" />
-            <element signature="e#7681#7721#0" />
-            <element signature="method#addControls#0;class#QuanLyPhieuBanGiao#0" />
-            <element signature="e#12185#12186#0" expanded="true" />
-            <element signature="e#12236#12237#0" expanded="true" />
-            <element signature="e#11959#11991#0" />
-            <element signature="e#11959#12154#0" />
-            <element signature="e#12275#12581#0" />
-            <element signature="e#12601#12703#0" />
-            <element signature="e#13512#13970#0" />
-            <element signature="e#10543#11135#0" />
-            <element signature="e#14381#14987#0" />
-            <element signature="e#15271#15272#0" expanded="true" />
-            <element signature="e#15301#15302#0" expanded="true" />
-            <element signature="e#15108#15611#0" />
-            <element signature="e#15083#15488#0" />
-            <element signature="e#16050#16094#0" />
-            <element signature="e#15056#15439#0" />
-            <element signature="method#getModelPhieuBanGiao#0;class#QuanLyPhieuBanGiao#0" />
-            <element signature="n#!!doc;n#sttPhongBan#0;n#QuanLyPhieuBanGiao#0" />
+            <element signature="e#623#1349#0" />
+            <element signature="e#665#757#0" />
+            <element signature="e#792#891#0" />
+            <element signature="e#926#1025#0" />
+            <element signature="e#1060#1159#0" />
+            <element signature="e#1203#1302#0" />
+            <element signature="e#1355#1729#0" />
+            <element signature="e#1735#9562#0" />
+            <element signature="e#2244#2273#0" />
+            <element signature="e#3608#3646#0" />
+            <element signature="class#3811:4471" />
+            <element signature="method#prepareRenderer#0;class#3811:4471" />
+            <element signature="e#4258#4338#1" />
+            <element signature="e#4343#4421#1" />
+            <element signature="e#5479#5522#0" />
+            <element signature="class#5744:6286" />
+            <element signature="method#prepareRenderer#0;class#5744:6286" />
+            <element signature="e#6962#6996#0" />
+            <element signature="e#7005#7084#0" />
+            <element signature="e#8224#8264#0" />
+            <element signature="e#9568#12387#0" />
+            <element signature="e#12393#15088#0" />
+            <element signature="class#13481:14356" />
+            <element signature="method#mouseClicked#0;class#13481:14356" />
+            <element signature="method#mousePressed#0;class#13481:14356" />
+            <element signature="method#mouseReleased#0;class#13481:14356" />
+            <element signature="method#mouseEntered#0;class#13481:14356" />
+            <element signature="method#mouseExited#0;class#13481:14356" />
+            <element signature="class#14405:15080" />
+            <element signature="method#mouseClicked#0;class#14405:15080" />
+            <element signature="method#mousePressed#0;class#14405:15080" />
+            <element signature="method#mouseReleased#0;class#14405:15080" />
+            <element signature="method#mouseEntered#0;class#14405:15080" />
+            <element signature="method#mouseExited#0;class#14405:15080" />
+            <element signature="e#15094#15144#0" />
+            <element signature="e#15094#15328#0" />
+            <element signature="e#15334#15450#0" />
+            <element signature="e#15456#15783#0" />
+            <element signature="e#15610#15777#1" />
+            <element signature="e#15719#15767#1" />
+            <element signature="e#15789#16194#0" />
+            <element signature="e#15914#16026#1" />
+            <element signature="e#16074#16188#1" />
+            <element signature="e#16200#16379#0" />
+            <element signature="e#16315#16373#1" />
+            <element signature="e#16385#16802#0" />
+            <element signature="e#16511#16771#1" />
+            <element signature="e#16608#16761#1" />
+            <element signature="e#16808#17057#0" />
+            <element signature="e#16899#16965#1" />
+            <element signature="e#17084#17116#0" />
+            <element signature="e#17084#17438#0" />
+            <element signature="e#17310#17432#1" />
+            <element signature="e#17355#17422#1" />
+            <element signature="e#17444#17768#0" />
+            <element signature="e#17645#17762#1" />
+            <element signature="e#17694#17752#1" />
+            <element signature="e#17774#18131#0" />
+            <element signature="e#17991#18125#1" />
+            <element signature="e#18137#18718#0" />
+            <element signature="e#18272#18712#1" />
+            <element signature="e#18453#18702#1" />
+            <element signature="e#18745#18778#0" />
+            <element signature="e#18745#19230#0" />
+            <element signature="e#19236#19889#0" />
+            <element signature="e#19367#19883#0" />
+            <element signature="e#19895#20222#0" />
+            <element signature="e#20249#20689#0" />
+            <element signature="e#20355#20683#1" />
+            <element signature="e#20781#21326#0" />
+            <element signature="e#20887#21278#1" />
+            <element signature="e#21284#21320#1" />
+            <element signature="e#21332#21376#0" />
+            <element signature="e#21332#21966#0" />
+            <element signature="e#21494#21776#1" />
+            <element signature="e#21609#21660#1" />
+            <element signature="e#21682#21774#1" />
+            <element signature="e#21852#22038#1" />
+            <element signature="e#21925#22024#1" />
+            <element signature="e#21782#21960#1" />
+            <element signature="e#21972#22435#0" />
+            <element signature="e#22183#22284#0" />
+            <element signature="e#22310#22354#0" />
+            <element signature="e#22462#22494#0" />
           </folding>
         </state>
       </provider>

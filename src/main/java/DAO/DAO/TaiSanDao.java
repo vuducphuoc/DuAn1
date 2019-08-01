@@ -7,5 +7,4 @@ import Entity.TaiSan;
 import java.util.List;
 
 public interface TaiSanDao extends GenericDao<String, TaiSan> {
-    TaiSanDTO getByID(String id) ;
 }

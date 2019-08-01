@@ -1,7 +1,9 @@
 package Frame.Main;
 
+import Frame.Login.ChangePassFrame;
 import Frame.Login.LoginFrame;
 import Frame.Panel.*;
+import sun.rmi.runtime.Log;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,11 +17,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MainFrame extends JFrame {
-    public static QuanLyNhanVien quanLyNhanVien = new QuanLyNhanVien();
-    public static QuanLyPhieuBanGiao quanLyPhieuBanGiao = new QuanLyPhieuBanGiao();
-    public static QuanLyTaiSan quanLyTaiSan = new QuanLyTaiSan();
-    public static DanhMucKhac danhMucKhac = new DanhMucKhac();
-    public static BaoCaoThongKe baoCaoThongKe = new BaoCaoThongKe();
+    public static ChangePassFrame frChangePass;
+
+    public static QuanLyNhanVien quanLyNhanVien;
+    public static QuanLyPhieuBanGiao quanLyPhieuBanGiao;
+    public static QuanLyTaiSan quanLyTaiSan;
+    public static DanhMucKhac danhMucKhac;
+    public static BaoCaoThongKe baoCaoThongKe ;
 
     public MainFrame () {
         super("PHẦN MỀM QUẢN LÝ TÀI SẢN");
@@ -34,8 +38,13 @@ public class MainFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        quanLyPhieuBanGiao = new QuanLyPhieuBanGiao();
+        quanLyTaiSan = new QuanLyTaiSan();
+        quanLyNhanVien = new QuanLyNhanVien();
+        baoCaoThongKe = new BaoCaoThongKe();
+        danhMucKhac = new DanhMucKhac();
         open();
-
+        doneLoad = true;
     }
 
     public void open() {
@@ -92,7 +101,7 @@ public class MainFrame extends JFrame {
         tabbedPane = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.SCROLL_TAB_LAYOUT);
         tabbedPane.setBounds(50,50, 300, 300);
 
-        tabbedPane.addTab("Quản lý Phiếu Bàn Giao", new ImageIcon("src/Image/icon-asset.png"), quanLyPhieuBanGiao);
+        tabbedPane.addTab("Quản lý Phiếu Bàn Giao", new ImageIcon("src/Image/icon-bill.png"), quanLyPhieuBanGiao);
         tabbedPane.addTab("Quản lý Tài Sản", new ImageIcon("src/Image/icon-asset.png"), quanLyTaiSan);
         tabbedPane.addTab("Quản lý Nhân Viên", new ImageIcon("src/Image/icon-employee.png"), quanLyNhanVien);
         tabbedPane.addTab("Báo cáo - Thống Kê", new ImageIcon("src/Image/icon-statistical.png"), baoCaoThongKe);
@@ -157,6 +166,17 @@ public class MainFrame extends JFrame {
         });
         // </editor-fold>
 
+        // <editor-fold defaultstate="collapsed" desc="Sự kiện mnuSys_Changepass ">
+        mnuSys_Changepass.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frChangePass = new ChangePassFrame();
+                ChangePassFrame.lblShowUser.setText(LoginFrame.nvLogin.getTaikhoan());
+                ChangePassFrame.lblShowName.setText(LoginFrame.nvLogin.getTennv());
+            }
+        });
+        // </editor-fold>
+
     }
 
 
@@ -196,10 +216,11 @@ public class MainFrame extends JFrame {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="COMPONENT ">
+    public boolean doneLoad = false;
     JLabel lblTime;
     JMenuBar mnuBar;
     JMenu mnuSystem;
-    JMenuItem mnuSys_showUsername, mnuSys_Changepass, mnuSys_Signout, mnuSys_Exit;
+    public JMenuItem mnuSys_showUsername, mnuSys_Changepass, mnuSys_Signout, mnuSys_Exit;
     JTabbedPane tabbedPane;
     // </editor-fold>
 }

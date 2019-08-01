@@ -1,11 +1,8 @@
 package Frame.Panel;
 
 import Contant.CoreConstant;
-import DTO.NhanVienDTO;
-import DTO.PhongBanDTO;
 import Entity.NhanVien;
 import Entity.PhongBan;
-import EntityBeanUtil.NhanVienBeanUtil;
 import Utils.DateUtil;
 import Utils.DialogUtils;
 import Utils.SingletonDaoUtil;
@@ -16,7 +13,6 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.*;
 import java.util.List;
@@ -37,6 +33,7 @@ public class QuanLyNhanVien extends JPanel{
             Logger.getLogger(QuanLyNhanVien.class.getName()).log(Level.SEVERE, null, ex);
         }
         open();
+        doneLoad = true;
     }
 
     public void open() {
@@ -629,9 +626,6 @@ public class QuanLyNhanVien extends JPanel{
             int n = SingletonDaoUtil.getNhanVienDaoImpl().delete(nvSelected);
 
             if (n > 0) {
-                if (indexEmployee == nhanVienList.size() -1) {
-                    indexEmployee = indexEmployee - 1;
-                }
                 deleteSuccess();
             }
         }
@@ -651,6 +645,9 @@ public class QuanLyNhanVien extends JPanel{
     }
 
     public void deleteSuccess() {
+        if (indexEmployee == nhanVienList.size() -1) {
+            indexEmployee = indexEmployee - 1;
+        }
         loadDataToTblEmployee(pbSelected);
         fillToFormNV(indexEmployee);
     }
@@ -816,7 +813,6 @@ public class QuanLyNhanVien extends JPanel{
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         String taikhoan = txtUsername.getText().trim();
         String matkhau = null;
         boolean vaitro = rdoAdmin.isSelected() == true ? CoreConstant.ADMIN : CoreConstant.EMPLOYEE;
@@ -879,6 +875,8 @@ public class QuanLyNhanVien extends JPanel{
             return "NV00001";
         }
     }
+
+    public boolean doneLoad = false;
 
     List<NhanVien> nhanVienList = new ArrayList<>();
     List<PhongBan> phongBanList = new ArrayList<>();

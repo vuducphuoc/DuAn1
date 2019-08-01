@@ -126,15 +126,6 @@ public class QuanLyPhongBan extends JPanel {
     }
 
     public void loadDataToTblPhongBan() {
-        phongBanDTOList = SingletonDaoUtil.getPhongBanDaoImpl().getAll();
-        modelTalDepartment.setRowCount(0);
-        int i = 1;
-        for (PhongBanDTO item : phongBanDTOList) {
-            modelTalDepartment.addRow(new Object[] {
-                i, item.getMapb(), item.getTenpb()
-            });
-            i++;
-        }
     }
 
     //<editor-fold desc="COMPONENT">

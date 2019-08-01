@@ -31,6 +31,7 @@ public class DanhMucKhac extends JPanel {
             Logger.getLogger(DanhMucKhac.class.getName()).log(Level.SEVERE, null, ex);
         }
         open();
+        doneLoad = true;
     }
 
     public void open() {
@@ -146,6 +147,7 @@ public class DanhMucKhac extends JPanel {
     }
     // </editor-fold>
 
+    public boolean doneLoad = false;
     JList listFunc;
     CardLayout cardLayout;
     JPanel pnDetailFunc;

@@ -1,6 +1,7 @@
 package Entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "PHIEUBANGIAO")
@@ -11,7 +12,7 @@ public class PhieuBanGiao {
     private int id;
 
     @Column(name = "NGAYBANGIAO")
-    private String ngaybangiao;
+    private Date ngaybangiao;
 
     @Column(name = "NGUOISUDUNG")
     private String nguoisudungs;
@@ -32,11 +33,11 @@ public class PhieuBanGiao {
         this.id = id;
     }
 
-    public String getNgaybangiao() {
+    public Date getNgaybangiao() {
         return ngaybangiao;
     }
 
-    public void setNgaybangiao(String ngaybangiao) {
+    public void setNgaybangiao(Date ngaybangiao) {
         this.ngaybangiao = ngaybangiao;
     }
 
@@ -62,5 +63,10 @@ public class PhieuBanGiao {
 
     public void setTaiSan(TaiSan taiSan) {
         this.taiSan = taiSan;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(id);
     }
 }

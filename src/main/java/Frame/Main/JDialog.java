@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 public class JDialog extends JFrame {
     static JProgressBar progressBar;
     static JDialog chaoJDialogUI;
+
     public static LoginFrame loginFrame;
 
     public static void main(String[] args) {
@@ -19,7 +20,6 @@ public class JDialog extends JFrame {
 
     public JDialog(){
         super();
-
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {

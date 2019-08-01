@@ -107,4 +107,9 @@ public class TaiSan {
     public void setPhieuBanGiaoList(List<PhieuBanGiao> phieuBanGiaoList) {
         this.phieuBanGiaoList = phieuBanGiaoList;
     }
+
+    @Override
+    public String toString() {
+        return tents + " - " + mats;
+    }
 }

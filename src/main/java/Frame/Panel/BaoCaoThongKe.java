@@ -33,6 +33,7 @@ public class BaoCaoThongKe extends JPanel {
             Logger.getLogger(BaoCaoThongKe.class.getName()).log(Level.SEVERE, null, ex);
         }
         open();
+        doneLoad = true;
     }
 
     public void open() {
@@ -338,6 +339,8 @@ public class BaoCaoThongKe extends JPanel {
     }
 
     //<editor-fold desc="COMPONENT">
+    public boolean doneLoad = false;
+
     JComboBox cbxChoose;
     JTable tblThongKe1, tblThongKe2, tblThongKe3;
     DefaultTableModel modelTK1, modelTK2, modelTK3;

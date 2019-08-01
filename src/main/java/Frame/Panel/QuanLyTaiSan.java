@@ -8,6 +8,7 @@ import Entity.PhongBan;
 import Entity.TaiSan;
 import Utils.DateUtil;
 import Utils.DialogUtils;
+import Utils.MoneyUtil;
 import Utils.SingletonDaoUtil;
 
 import javax.swing.*;
@@ -39,6 +40,7 @@ public class QuanLyTaiSan extends JPanel {
             Logger.getLogger(QuanLyTaiSan.class.getName()).log(Level.SEVERE, null, ex);
         }
         open();
+        doneLoad = true;
     }
 
     public void open() {
@@ -552,7 +554,7 @@ public class QuanLyTaiSan extends JPanel {
 
         for (NhaSanXuat item : nhaSanXuatList) {
             modelTblNhaSanXuat.addRow(new Object[] {
-                    i, item.getTennsx()
+                    i, item.getTennsx() + " - " + item.getQuocGia().getTenqg()
             });
             i++;
         }
@@ -568,8 +570,9 @@ public class QuanLyTaiSan extends JPanel {
             if (taiSanList.size() > 0) {
                 int i = 1;
                 for (TaiSan item : taiSanList) {
+                    long nguyengia = Long.parseLong(String.valueOf(item.getNguyengia()));
                     modelTblTaiSan.addRow(new Object[] {
-                            i, item.getMats(), item.getTents(), item.getNguyengia(),item.getThoigiankhauhao()
+                            i, item.getMats(), item.getTents(), MoneyUtil.castIntToMoney(nguyengia),item.getThoigiankhauhao() + " năm"
                     });
                     i++;
                 }
@@ -744,6 +747,8 @@ public class QuanLyTaiSan extends JPanel {
     }
 
     //<editor-fold desc="COMPONENT">
+    public boolean doneLoad = false;
+
     List<NhaSanXuat> nhaSanXuatList = new ArrayList<>();
     List<TaiSan> taiSanList = new ArrayList<>();
 

@@ -3,6 +3,7 @@ package Frame.Login;
 import Contant.CoreConstant;
 import Entity.NhanVien;
 import Frame.Main.MainFrame;
+import Frame.Panel.*;
 import Utils.DialogUtils;
 import Utils.SingletonDaoUtil;
 
@@ -37,7 +38,7 @@ public class LoginFrame extends JFrame {
     }
 
     private void showWindows() {
-        this.setSize(430, 320);
+        this.setSize(430, 330);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -49,6 +50,7 @@ public class LoginFrame extends JFrame {
         lblTitle = new JLabel("ĐĂNG NHẬP");
         lblUser = new JLabel("Tài khoản");
         lblPassword = new JLabel("Mật khẩu");
+        lblForget = new JLabel("Quên mật khẩu");
 
         txtUser = new JTextField();
         pwfPassword = new JPasswordField();
@@ -56,9 +58,12 @@ public class LoginFrame extends JFrame {
         btnLogin = new JButton("Đăng nhập");
         btnExit = new JButton("Đóng");
 
-        // FONT - SIZE
+        //<editor-fold desc="Set Font Segoe UI">
         lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 26));
         lblTitle.setForeground(Color.decode("#32488d"));
+
+        lblForget.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        lblForget.setForeground(Color.decode("#32488d"));
 
         lblUser.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 18));
         lblUser.setForeground(Color.decode("#32488d"));
@@ -67,6 +72,7 @@ public class LoginFrame extends JFrame {
 
         btnLogin.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
         btnExit.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
+        //</editor-fold>
 
         btnLogin.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnExit.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -91,6 +97,8 @@ public class LoginFrame extends JFrame {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(0, 20, 15, 20);
 
+        gbc.ipady = 3;
+
         gbc.gridx = 0;
         gbc.gridy = 0;
         pnContent.add(lblUser, gbc);
@@ -99,8 +107,8 @@ public class LoginFrame extends JFrame {
         gbc.gridy = 1;
         pnContent.add(lblPassword, gbc);
 
-        gbc.ipadx = 200;
-        gbc.ipady = 10;
+        gbc.ipadx = 100;
+
         gbc.gridx = 1;
         gbc.gridy = 0;
         pnContent.add(txtUser, gbc);
@@ -109,12 +117,24 @@ public class LoginFrame extends JFrame {
         gbc.gridy = 1;
         pnContent.add(pwfPassword, gbc);
 
-        JPanel pnButton = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 20));
+        JPanel pnForget = new JPanel(new FlowLayout(FlowLayout.RIGHT,0,0));
+        pnForget.add(lblForget);
+
+        gbc.ipady = 0;
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        pnContent.add(pnForget, gbc);
+
+        JPanel pnButton = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 0));
         pnButton.add(btnLogin);
         pnButton.add(btnExit);
 
+        JPanel pnTemp = new JPanel();
+        pnTemp.setPreferredSize(new Dimension(0, 20));
+
         pnMain.add(pnContent, BorderLayout.NORTH);
         pnMain.add(pnButton, BorderLayout.CENTER);
+        pnMain.add(pnTemp, BorderLayout.SOUTH);
 
         progressBar = new JProgressBar(0, 100);
         con.add(pnTitle, BorderLayout.NORTH);
@@ -191,13 +211,87 @@ public class LoginFrame extends JFrame {
         boolean kiemtra = SingletonDaoUtil.getNhanVienDaoImpl().checkLogin(email, password);
         if (kiemtra == CoreConstant.LOGIN_SUCCESS) {
             mainFrame = new MainFrame();
-            mainFrame.setVisible(true);
-            frThis.setVisible(false);
+            runProgressbar();
         } else {
             pwfPassword.setText("");
             pwfPassword.requestFocus();
         }
     }
+
+    // <editor-fold defaultstate="collapsed" desc="Progressbar ">
+    private void runProgressbar() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int valueProgress = 0;
+
+                while (valueProgress <= 100) {
+                    if (mainFrame.quanLyPhieuBanGiao.doneLoad == true && valueProgress <= 20) {
+                        while (valueProgress <= 20) {
+                            progressBar.setValue(valueProgress);
+                            valueProgress++;
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+
+                    if (mainFrame.quanLyTaiSan.doneLoad == true && valueProgress <= 40) {
+                        while (valueProgress <= 40) {
+                            progressBar.setValue(valueProgress);
+                            valueProgress++;
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+
+                    if (mainFrame.quanLyNhanVien.doneLoad == true && valueProgress <= 60) {
+                        while (valueProgress <= 60) {
+                            progressBar.setValue(valueProgress);
+                            valueProgress++;
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+
+                    if (mainFrame.baoCaoThongKe.doneLoad == true && valueProgress <= 80) {
+                        while (valueProgress <= 80) {
+                            progressBar.setValue(valueProgress);
+                            valueProgress++;
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+
+                    if (mainFrame.danhMucKhac.doneLoad == true && valueProgress <= 100) {
+                        while (valueProgress <= 100) {
+                            progressBar.setValue(valueProgress);
+                            valueProgress++;
+                            try {
+                                Thread.sleep(10);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                }
+                frThis.setVisible(false);
+                mainFrame.setVisible(true);
+            }
+        }).start();
+    }
+    // </editor-fold>
 
     //<editor-fold desc="COMPONENT">
     public JProgressBar progressBar;
@@ -205,6 +299,7 @@ public class LoginFrame extends JFrame {
     JPasswordField pwfPassword;
     JButton btnLogin, btnExit;
     JLabel lblUser, lblPassword, lblTitle;
+    JLabel lblForget;
     public static NhanVien nvLogin;
 
     JFrame frThis = this;

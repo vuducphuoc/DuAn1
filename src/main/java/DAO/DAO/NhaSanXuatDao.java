@@ -6,5 +6,4 @@ import Entity.NhaSanXuat;
 import java.util.List;
 
 public interface NhaSanXuatDao extends GenericDao<Integer, NhaSanXuat> {
-    List<NhaSanXuatDTO> getAll () ;
 }

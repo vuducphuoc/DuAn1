@@ -50,4 +50,9 @@ public class PhongBan {
     public void setPhieuBanGiaoList(List<PhieuBanGiao> phieuBanGiaoList) {
         this.phieuBanGiaoList = phieuBanGiaoList;
     }
+
+    @Override
+    public String toString() {
+        return tenpb + " - " + mapb;
+    }
 }

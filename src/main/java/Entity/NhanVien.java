@@ -1,5 +1,6 @@
 package Entity;
 
+import Contant.CoreConstant;
 import Utils.DateUtil;
 
 import javax.persistence.*;
@@ -47,9 +48,14 @@ public class NhanVien {
         this.ngaysinh = ngaysinh;
         this.diachi = diachi;
         this.taikhoan = taikhoan;
-        this.matkhau = matkhau;
         this.vaitro = vaitro;
         this.phongBan = phongBan;
+
+        if (vaitro == CoreConstant.ADMIN) {
+            this.matkhau = "123@123a";
+        } else {
+            this.matkhau = null;
+        }
     }
 
     public String getManv() {
