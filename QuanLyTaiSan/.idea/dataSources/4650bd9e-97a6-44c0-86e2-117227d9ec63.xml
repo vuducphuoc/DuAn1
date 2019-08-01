@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.14">
+    <root id="1">
+      <ServerVersion>14.0.1000</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="AIR_SPACE">
+      <ObjectId>24</ObjectId>
+    </database>
+    <database id="3" parent="1" name="DEMO">
+      <ObjectId>7</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="4" parent="1" name="Library">
+      <ObjectId>12</ObjectId>
+    </database>
+    <database id="5" parent="1" name="Quan ly thu vien">
+      <ObjectId>6</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="6" parent="1" name="QuanLyDienThoai">
+      <ObjectId>29</ObjectId>
+    </database>
+    <database id="7" parent="1" name="QuanLyTaiSan">
+      <ObjectId>5</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="8" parent="1" name="TOEIC_ONLINE">
+      <ObjectId>25</ObjectId>
+    </database>
+    <database id="9" parent="1" name="TestHM">
+      <ObjectId>17</ObjectId>
+    </database>
+    <database id="10" parent="1" name="dbPolypro_APT">
+      <ObjectId>20</ObjectId>
+    </database>
+    <database id="11" parent="1" name="dbPolypro_APT2">
+      <ObjectId>23</ObjectId>
+    </database>
+    <database id="12" parent="1" name="dbPolypro_APT_test">
+      <ObjectId>21</ObjectId>
+    </database>
+    <database id="13" parent="1" name="dbPolypro_APT_test2">
+      <ObjectId>22</ObjectId>
+    </database>
+    <database id="14" parent="1" name="java4">
+      <ObjectId>27</ObjectId>
+    </database>
+    <database id="15" parent="1" name="java4_Lab02">
+      <ObjectId>31</ObjectId>
+    </database>
+    <database id="16" parent="1" name="java4_lab03">
+      <ObjectId>8</ObjectId>
+    </database>
+    <database id="17" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="18" parent="1" name="minishop">
+      <ObjectId>18</ObjectId>
+    </database>
+    <database id="19" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="20" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="21" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <schema id="22" parent="7" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="23" parent="7" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="24" parent="7" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="25" parent="7" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="26" parent="7" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="27" parent="7" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="28" parent="7" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="29" parent="7" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="30" parent="7" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="31" parent="7" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="32" parent="7" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2019-07-31.02:28:30.683</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="33" parent="7" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="34" parent="7" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="35" parent="32" name="NHANVIEN">
+      <ObjectId>949578421</ObjectId>
+      <CreatedTimestamp>2019-07-23.18:06:54.710</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.710</ModifiedTimestamp>
+    </table>
+    <table id="36" parent="32" name="NHASANXUAT">
+      <ObjectId>1093578934</ObjectId>
+      <CreatedTimestamp>2019-07-23.18:06:54.780</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.797</ModifiedTimestamp>
+    </table>
+    <table id="37" parent="32" name="PHANLOAI">
+      <ObjectId>1141579105</ObjectId>
+      <CreatedTimestamp>2019-07-23.18:06:54.783</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.797</ModifiedTimestamp>
+    </table>
+    <table id="38" parent="32" name="PHIEUBANGIAO">
+      <ObjectId>1253579504</ObjectId>
+      <CreatedTimestamp>2019-07-23.18:06:54.797</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.797</ModifiedTimestamp>
+    </table>
+    <table id="39" parent="32" name="PHONGBAN">
+      <ObjectId>1205579333</ObjectId>
+      <CreatedTimestamp>2019-07-23.16:16:45.347</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.16:17:18.680</ModifiedTimestamp>
+    </table>
+    <table id="40" parent="32" name="PHONGBAN">
+      <ObjectId>901578250</ObjectId>
+      <CreatedTimestamp>2019-07-23.18:06:54.693</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.800</ModifiedTimestamp>
+    </table>
+    <table id="41" parent="32" name="QUOCGIA">
+      <ObjectId>1045578763</ObjectId>
+      <CreatedTimestamp>2019-07-23.18:06:54.773</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.783</ModifiedTimestamp>
+    </table>
+    <table id="42" parent="32" name="TAISAN">
+      <ObjectId>1189579276</ObjectId>
+      <CreatedTimestamp>2019-07-23.18:06:54.790</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.800</ModifiedTimestamp>
+    </table>
+    <routine id="43" parent="32" name="sp_hetkhauhao">
+      <ObjectId>1605580758</ObjectId>
+      <SourceTextLength>251</SourceTextLength>
+      <CreatedTimestamp>2019-07-23.21:15:21.680</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.21:15:21.680</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="44" parent="32" name="sp_thongketaisan_1">
+      <ObjectId>1573580644</ObjectId>
+      <SourceTextLength>228</SourceTextLength>
+      <CreatedTimestamp>2019-07-23.21:15:11.863</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.21:15:11.863</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="45" parent="32" name="sp_thongketaisan_2">
+      <ObjectId>1621580815</ObjectId>
+      <SourceTextLength>288</SourceTextLength>
+      <CreatedTimestamp>2019-07-23.21:17:54.917</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.21:17:54.917</ModifiedTimestamp>
+      <RoutineKind>procedure</RoutineKind>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <column id="46" parent="35" name="MANV">
+      <Position>1</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="35" name="TENNV">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="35" name="GIOITINH">
+      <Position>3</Position>
+      <DefaultConstraintName>DF__NHANVIEN__GIOITI__3B75D760</DefaultConstraintName>
+      <DefaultExpression>1</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="35" name="NGAYSINH">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="35" name="DIACHI">
+      <Position>5</Position>
+      <DataType>ntext|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="35" name="TAIKHOAN">
+      <Position>6</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+    </column>
+    <column id="52" parent="35" name="MATKHAU">
+      <Position>7</Position>
+      <DataType>varchar(20 char)|0s</DataType>
+    </column>
+    <column id="53" parent="35" name="VAITRO">
+      <Position>8</Position>
+      <DefaultConstraintName>DF__NHANVIEN__VAITRO__3C69FB99</DefaultConstraintName>
+      <DefaultExpression>0</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="35" name="MAPB">
+      <Position>9</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+    </column>
+    <index id="55" parent="35" name="PK__NHANVIEN__603F5114542F2BC8">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MANV</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="35" name="UQ__NHANVIEN__8C5E6104CB2107D6">
+      <Position>2</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TAIKHOAN</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="35" name="PK__NHANVIEN__603F5114542F2BC8">
+      <ObjectId>965578478</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.713</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.713</ModifiedTimestamp>
+      <ColNames>MANV</ColNames>
+      <UnderlyingIndexName>PK__NHANVIEN__603F5114542F2BC8</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="58" parent="35" name="UQ__NHANVIEN__8C5E6104CB2107D6">
+      <ObjectId>981578535</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.713</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.713</ModifiedTimestamp>
+      <ColNames>TAIKHOAN</ColNames>
+      <UnderlyingIndexName>UQ__NHANVIEN__8C5E6104CB2107D6</UnderlyingIndexName>
+    </key>
+    <foreign-key id="59" parent="35" name="FK__NHANVIEN__MAPB__3D5E1FD2">
+      <ObjectId>1029578706</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.770</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.770</ModifiedTimestamp>
+      <ColNames>MAPB</ColNames>
+      <RefTableId>901578250</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>PHONGBAN</RefTableName>
+      <RefKeyName>PK__PHONGBAN__603F61C275A97E44</RefKeyName>
+      <RefColNames>MAPB</RefColNames>
+    </foreign-key>
+    <default id="60" parent="35" name="DF__NHANVIEN__GIOITI__3B75D760">
+      <ObjectId>997578592</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2019-07-23.18:06:54.763</ModifiedTimestamp>
+      <ColNames>GIOITINH</ColNames>
+      <DefaultExpression>1</DefaultExpression>
+    </default>
+    <default id="61" parent="35" name="DF__NHANVIEN__VAITRO__3C69FB99">
+      <ObjectId>1013578649</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2019-07-23.18:06:54.767</ModifiedTimestamp>
+      <ColNames>VAITRO</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <column id="62" parent="36" name="ID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="36" name="TENNSX">
+      <Position>2</Position>
+      <DataType>nvarchar(255 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="36" name="MAQG">
+      <Position>3</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="65" parent="36" name="PK__NHASANXU__3214EC27FD49B69A">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="36" name="PK__NHASANXU__3214EC27FD49B69A">
+      <ObjectId>1109578991</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.783</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.783</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>PK__NHASANXU__3214EC27FD49B69A</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="67" parent="36" name="FK__NHASANXUAT__MAQG__4316F928">
+      <ObjectId>1125579048</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.783</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.783</ModifiedTimestamp>
+      <ColNames>MAQG</ColNames>
+      <RefTableId>1045578763</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>QUOCGIA</RefTableName>
+      <RefKeyName>PK__QUOCGIA__602379F995DA7007</RefKeyName>
+      <RefColNames>MAQG</RefColNames>
+    </foreign-key>
+    <column id="68" parent="37" name="ID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="37" name="TENPL">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="70" parent="37" name="PK__PHANLOAI__3214EC277C6AF0F2">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="71" parent="37" name="UQ__PHANLOAI__A58D50003C5EE84B">
+      <Position>2</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TENPL</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="37" name="PK__PHANLOAI__3214EC277C6AF0F2">
+      <ObjectId>1157579162</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.787</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.787</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>PK__PHANLOAI__3214EC277C6AF0F2</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="73" parent="37" name="UQ__PHANLOAI__A58D50003C5EE84B">
+      <ObjectId>1173579219</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.787</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.787</ModifiedTimestamp>
+      <ColNames>TENPL</ColNames>
+      <UnderlyingIndexName>UQ__PHANLOAI__A58D50003C5EE84B</UnderlyingIndexName>
+    </key>
+    <column id="74" parent="38" name="ID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="38" name="NGAYBANGIAO">
+      <Position>2</Position>
+      <DefaultConstraintName>DF__PHIEUBANG__NGAYB__4CA06362</DefaultConstraintName>
+      <DefaultExpression>getdate()</DefaultExpression>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="38" name="NGUOISUDUNG">
+      <Position>3</Position>
+      <DataType>nvarchar(100 char)|0s</DataType>
+    </column>
+    <column id="77" parent="38" name="MAPB">
+      <Position>4</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+    </column>
+    <column id="78" parent="38" name="MATS">
+      <Position>5</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+    </column>
+    <index id="79" parent="38" name="PK__PHIEUBAN__3214EC276E84FF5C">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="38" name="PK__PHIEUBAN__3214EC276E84FF5C">
+      <ObjectId>1269579561</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.797</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.797</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <UnderlyingIndexName>PK__PHIEUBAN__3214EC276E84FF5C</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="81" parent="38" name="UQ__NHANVIEN__8C5E6104EDCD26CB">
+      <ObjectId>1285579618</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.16:16:45.367</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.16:16:45.367</ModifiedTimestamp>
+      <ColNames>TAIKHOAN</ColNames>
+      <UnderlyingIndexName>UQ__NHANVIEN__8C5E6104EDCD26CB</UnderlyingIndexName>
+    </key>
+    <foreign-key id="82" parent="38" name="FK__PHIEUBANGI__MAPB__4D94879B">
+      <ObjectId>1301579675</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.800</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.800</ModifiedTimestamp>
+      <ColNames>MAPB</ColNames>
+      <RefTableId>901578250</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>PHONGBAN</RefTableName>
+      <RefKeyName>PK__PHONGBAN__603F61C275A97E44</RefKeyName>
+      <RefColNames>MAPB</RefColNames>
+    </foreign-key>
+    <foreign-key id="83" parent="38" name="FK__PHIEUBANGI__MATS__4E88ABD4">
+      <ObjectId>1317579732</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.800</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.800</ModifiedTimestamp>
+      <ColNames>MATS</ColNames>
+      <RefTableId>1189579276</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>TAISAN</RefTableName>
+      <RefKeyName>PK__TAISAN__6023720E62643A72</RefKeyName>
+      <RefColNames>MATS</RefColNames>
+    </foreign-key>
+    <default id="84" parent="38" name="DF__NHANVIEN__GIOITI__4D94879B">
+      <ObjectId>1301579675</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2019-07-23.16:16:45.367</ModifiedTimestamp>
+      <ColNames>GIOITINH</ColNames>
+      <DefaultExpression>1</DefaultExpression>
+    </default>
+    <default id="85" parent="38" name="DF__NHANVIEN__VAITRO__4E88ABD4">
+      <ObjectId>1317579732</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2019-07-23.16:16:45.370</ModifiedTimestamp>
+      <ColNames>VAITRO</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <default id="86" parent="38" name="DF__PHIEUBANG__NGAYB__4CA06362">
+      <ObjectId>1285579618</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2019-07-23.18:06:54.797</ModifiedTimestamp>
+      <ColNames>NGAYBANGIAO</ColNames>
+      <DefaultExpression>getdate()</DefaultExpression>
+    </default>
+    <column id="87" parent="39" name="MAPB">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="39" name="TENPB">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="89" parent="39" name="PK__PHONGBAN__603F61C2BD799FBC">
+      <ObjectId>1221579390</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.16:16:45.363</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.16:16:45.363</ModifiedTimestamp>
+      <ColNames>MAPB</ColNames>
+      <UnderlyingIndexName>PK__PHONGBAN__603F61C2BD799FBC</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="90" parent="39" name="UQ__PHONGBAN__A58D503E2D3DA175">
+      <ObjectId>1237579447</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.16:16:45.363</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.16:16:45.363</ModifiedTimestamp>
+      <ColNames>TENPB</ColNames>
+      <UnderlyingIndexName>UQ__PHONGBAN__A58D503E2D3DA175</UnderlyingIndexName>
+    </key>
+    <column id="91" parent="40" name="MAPB">
+      <Position>1</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="40" name="TENPB">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="93" parent="40" name="PK__PHONGBAN__603F61C275A97E44">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MAPB</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="94" parent="40" name="UQ__PHONGBAN__A58D503E48FFAA75">
+      <Position>2</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TENPB</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="95" parent="40" name="PK__PHONGBAN__603F61C275A97E44">
+      <ObjectId>917578307</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.707</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.707</ModifiedTimestamp>
+      <ColNames>MAPB</ColNames>
+      <UnderlyingIndexName>PK__PHONGBAN__603F61C275A97E44</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="96" parent="40" name="UQ__PHONGBAN__A58D503E48FFAA75">
+      <ObjectId>933578364</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.710</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.710</ModifiedTimestamp>
+      <ColNames>TENPB</ColNames>
+      <UnderlyingIndexName>UQ__PHONGBAN__A58D503E48FFAA75</UnderlyingIndexName>
+    </key>
+    <column id="97" parent="41" name="MAQG">
+      <Position>1</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="41" name="TENQG">
+      <Position>2</Position>
+      <DataType>nvarchar(30 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="99" parent="41" name="PK__QUOCGIA__602379F995DA7007">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MAQG</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="100" parent="41" name="UQ__QUOCGIA__A58D5824969744D2">
+      <Position>2</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TENQG</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="101" parent="41" name="PK__QUOCGIA__602379F995DA7007">
+      <ObjectId>1061578820</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.777</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.777</ModifiedTimestamp>
+      <ColNames>MAQG</ColNames>
+      <UnderlyingIndexName>PK__QUOCGIA__602379F995DA7007</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="102" parent="41" name="UQ__QUOCGIA__A58D5824969744D2">
+      <ObjectId>1077578877</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.780</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.780</ModifiedTimestamp>
+      <ColNames>TENQG</ColNames>
+      <UnderlyingIndexName>UQ__QUOCGIA__A58D5824969744D2</UnderlyingIndexName>
+    </key>
+    <column id="103" parent="42" name="MATS">
+      <Position>1</Position>
+      <DataType>varchar(7 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="42" name="TENTS">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="42" name="MOTA">
+      <Position>3</Position>
+      <DataType>ntext|0s</DataType>
+    </column>
+    <column id="106" parent="42" name="NGUYENGIA">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="107" parent="42" name="TILEKHAUHAO">
+      <Position>5</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="42" name="THOIGIANKHAUHAO">
+      <Position>6</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="42" name="MANSX">
+      <Position>7</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="110" parent="42" name="MAPL">
+      <Position>8</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="111" parent="42" name="PK__TAISAN__6023720E62643A72">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MATS</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="112" parent="42" name="PK__TAISAN__6023720E62643A72">
+      <ObjectId>1205579333</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.793</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.793</ModifiedTimestamp>
+      <ColNames>MATS</ColNames>
+      <UnderlyingIndexName>PK__TAISAN__6023720E62643A72</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="113" parent="42" name="FK__TAISAN__MANSX__48CFD27E">
+      <ObjectId>1221579390</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.793</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.793</ModifiedTimestamp>
+      <ColNames>MANSX</ColNames>
+      <RefTableId>1093578934</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>NHASANXUAT</RefTableName>
+      <RefKeyName>PK__NHASANXU__3214EC27FD49B69A</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="114" parent="42" name="FK__TAISAN__MAPL__49C3F6B7">
+      <ObjectId>1237579447</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2019-07-23.18:06:54.797</CreatedTimestamp>
+      <ModifiedTimestamp>2019-07-23.18:06:54.797</ModifiedTimestamp>
+      <ColNames>MAPL</ColNames>
+      <RefTableId>1141579105</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>PHANLOAI</RefTableName>
+      <RefKeyName>PK__PHANLOAI__3214EC277C6AF0F2</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
