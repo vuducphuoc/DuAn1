@@ -51,6 +51,14 @@ public class PhongBan {
         this.phieuBanGiaoList = phieuBanGiaoList;
     }
 
+    public PhongBan() {
+    }
+
+    public PhongBan(String mapb, String tenpb) {
+        this.mapb = mapb;
+        this.tenpb = tenpb;
+    }
+
     @Override
     public String toString() {
         return tenpb + " - " + mapb;

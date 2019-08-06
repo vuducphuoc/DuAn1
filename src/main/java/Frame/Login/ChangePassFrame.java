@@ -178,9 +178,10 @@ public class ChangePassFrame extends JFrame{
         String oldPass  = txtOldPass.getText();
         String newPass  = txtNewPass.getText();
         String rePass   = txtRepass.getText();
-        
+
         if (checkInfo()) {
-            SingletonDaoUtil.getNhanVienDaoImpl().update(nvLogin);
+            nvLogin.setMatkhau(newPass);
+            LoginFrame.nvLogin = SingletonDaoUtil.getNhanVienDaoImpl().update(nvLogin);
             return true;
         }
         

@@ -8,9 +8,4 @@ import Entity.PhongBan;
 import  java.util.List;
 
 public interface NhanVienDao extends GenericDao<String, NhanVien> {
-    boolean checkLogin(String email, String password);
-
-    List<NhanVienDTO> getNhanVienDtoList ();
-
-    String getLastID();
 }

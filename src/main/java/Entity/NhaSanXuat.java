@@ -42,6 +42,14 @@ public class NhaSanXuat {
         this.quocGia = quocGia;
     }
 
+    public NhaSanXuat() {
+    }
+
+    public NhaSanXuat(String tennsx, QuocGia quocGia) {
+        this.tennsx = tennsx;
+        this.quocGia = quocGia;
+    }
+
     @Override
     public String toString() {
         return tennsx + " - " + quocGia.getTenqg();

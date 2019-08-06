@@ -9,6 +9,7 @@ import Entity.PhongBan;
 import Frame.Login.LoginFrame;
 import Utils.DialogUtils;
 import Utils.HibernateUtil;
+import Utils.SingletonDaoUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -17,7 +18,6 @@ import org.hibernate.Transaction;
 import java.util.*;
 
 public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements NhanVienDao {
-    @Override
     public boolean checkLogin(String email, String password) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -50,13 +50,6 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
         }
     }
 
-    @Override
-    public List<NhanVienDTO> getNhanVienDtoList() {
-        return null;
-    }
-
-
-    @Override
     public String getLastID() {
         NhanVien nv = new NhanVien();
         List<NhanVien> list = new ArrayList<>();
@@ -104,28 +97,38 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
     }
 
     public List<NhanVien> searchByProperty(Map<String, Object> property, PhongBan phongBan) {
-        List<NhanVien> nhanVienList = new ArrayList<>();
-        String mapb = phongBan.getMapb();
+    List<NhanVien> nhanVienList = new ArrayList<>();
+    String mapb = phongBan.getMapb();
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        Object[] nameQuery = HibernateUtil.buildNameQuerySearch(property);
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    Transaction transaction = session.beginTransaction();
+    Object[] nameQuery = HibernateUtil.buildNameQuerySearch(property);
 
-        try {
-            StringBuilder sql1 = new StringBuilder("from ");
-            sql1.append(getPersistenceClassName()).append(" where (mapb = :mapb) AND ( ").append(nameQuery[0]).append(" )");
-            Query query1 = session.createQuery(sql1.toString());
-            query1.setParameter("mapb", mapb);
-            setParameterToQuery(nameQuery, query1);
-            nhanVienList = query1.list();
+    try {
+        StringBuilder sql1 = new StringBuilder("from ");
+        sql1.append(getPersistenceClassName()).append(" where (mapb = :mapb) AND ( ").append(nameQuery[0]).append(" )");
+        Query query1 = session.createQuery(sql1.toString());
+        query1.setParameter("mapb", mapb);
+        setParameterToQuery(nameQuery, query1);
+        nhanVienList = query1.list();
 
-            transaction.commit();
-        } catch (HibernateException e) {
-            transaction.rollback();
-            throw e;
-        } finally {
-            session.close();
+        transaction.commit();
+    } catch (HibernateException e) {
+        transaction.rollback();
+        throw e;
+    } finally {
+        session.close();
+    }
+    return nhanVienList;
+}
+
+    public boolean checkEmailExist(String email) {
+
+        NhanVien nhanVien = findEqualUnique("taikhoan", email);
+        if (nhanVien != null) {
+            return true;
+        } else {
+            return false;
         }
-        return nhanVienList;
     }
 }

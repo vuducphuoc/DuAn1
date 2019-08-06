@@ -2,8 +2,7 @@ package Frame.Main;
 
 import Frame.Login.ChangePassFrame;
 import Frame.Login.LoginFrame;
-import Frame.Panel.*;
-import sun.rmi.runtime.Log;
+import Frame.Panel.Manager.*;
 
 import javax.swing.*;
 import java.awt.*;

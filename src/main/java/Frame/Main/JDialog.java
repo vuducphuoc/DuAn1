@@ -1,6 +1,9 @@
 package Frame.Main;
 
 import Frame.Login.LoginFrame;
+import Utils.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import javax.swing.*;
 import java.awt.*;
@@ -70,14 +73,30 @@ public class JDialog extends JFrame {
         while (true) {
             i++;
 
+            if (i == 30) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(JDialog.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+            if (i == 70) {
+                SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+                Session session = sessionFactory.getCurrentSession();
+                if (session != null) {
+                    continue;
+                }
+            }
+
             if (i > 100) {
                 chaoJDialogUI.setVisible(false);
                 loginFrame = new LoginFrame();
                 loginFrame.setVisible(true);
                 return;
             }
-
             progressBar.setValue(i);
+
             try {
                 Thread.sleep(15);
             } catch (InterruptedException ex) {

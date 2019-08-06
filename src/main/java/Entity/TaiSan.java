@@ -25,6 +25,9 @@ public class TaiSan {
     @JoinColumn(name = "THOIGIANKHAUHAO")
     private double thoigiankhauhao;
 
+    @JoinColumn(name = "NAMBDSUDUNG")
+    private int nambdsudung;
+
     @ManyToOne
     @JoinColumn(name = "MANSX")
     private NhaSanXuat nhaSanXuat;
@@ -106,6 +109,14 @@ public class TaiSan {
 
     public void setPhieuBanGiaoList(List<PhieuBanGiao> phieuBanGiaoList) {
         this.phieuBanGiaoList = phieuBanGiaoList;
+    }
+
+    public int getNambdsudung() {
+        return nambdsudung;
+    }
+
+    public void setNambdsudung(int nambdsudung) {
+        this.nambdsudung = nambdsudung;
     }
 
     @Override

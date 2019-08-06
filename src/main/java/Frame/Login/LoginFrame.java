@@ -3,7 +3,6 @@ package Frame.Login;
 import Contant.CoreConstant;
 import Entity.NhanVien;
 import Frame.Main.MainFrame;
-import Frame.Panel.*;
 import Utils.DialogUtils;
 import Utils.SingletonDaoUtil;
 
@@ -13,6 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,7 +39,7 @@ public class LoginFrame extends JFrame {
     }
 
     private void showWindows() {
-        this.setSize(430, 330);
+        this.setSize(432, 370);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -48,29 +49,39 @@ public class LoginFrame extends JFrame {
 
     public void initComponent() {
         lblTitle = new JLabel("ĐĂNG NHẬP");
+
+//        lblTitle.setIcon(new ImageIcon("src/Image/icon-user.png"));
+
         lblUser = new JLabel("Tài khoản");
+        lblUser.setIcon(new ImageIcon("src/Image/icon-user.png"));
+        lblUser.setFont(new Font("Segoe UI", Font.BOLD, 15));
+//        lblUser.setForeground(Color.decode("#32488d"));
+        lblUser.setForeground(Color.decode("#000"));
+
         lblPassword = new JLabel("Mật khẩu");
+        lblPassword.setIcon(new ImageIcon("src/Image/icon-password.png"));
+        lblPassword.setFont(new Font("Segoe UI", Font.BOLD, 15));
+//        lblPassword.setForeground(Color.decode("#32488d"));
+        lblPassword.setForeground(Color.decode("#000"));
+
         lblForget = new JLabel("Quên mật khẩu");
+        lblForget.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        lblForget.setForeground(Color.decode("#32488d"));
 
         txtUser = new JTextField();
         pwfPassword = new JPasswordField();
 
-        btnLogin = new JButton("Đăng nhập");
+        btnLogin = new JButton("ĐĂNG NHẬP");
         btnExit = new JButton("Đóng");
 
         //<editor-fold desc="Set Font Segoe UI">
         lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 26));
         lblTitle.setForeground(Color.decode("#32488d"));
 
-        lblForget.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        lblForget.setForeground(Color.decode("#32488d"));
+        btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 15));
+        btnLogin.setForeground(Color.decode("#32488d"));
+        btnLogin.setPreferredSize(new Dimension(140, 35));
 
-        lblUser.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 18));
-        lblUser.setForeground(Color.decode("#32488d"));
-        lblPassword.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 18));
-        lblPassword.setForeground(Color.decode("#32488d"));
-
-        btnLogin.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
         btnExit.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 14));
         //</editor-fold>
 
@@ -79,8 +90,11 @@ public class LoginFrame extends JFrame {
 
         btnExit.setPreferredSize(btnLogin.getPreferredSize());
 
-        txtUser.setHorizontalAlignment(JTextField.CENTER);
-        pwfPassword.setHorizontalAlignment(JTextField.CENTER);
+        txtUser.setMargin(new Insets(5, 10, 5, 0));
+        pwfPassword.setMargin(new Insets(5, 10, 5, 0));
+
+//        txtUser.setHorizontalAlignment(JTextField.CENTER);
+//        pwfPassword.setHorizontalAlignment(JTextField.CENTER);
     }
 
     private void addControls() {
@@ -89,15 +103,16 @@ public class LoginFrame extends JFrame {
 
         JPanel pnMain = new JPanel(new BorderLayout());
 
-        JPanel pnTitle = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 30));
+        JPanel pnTitle = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 20));
         pnTitle.add(lblTitle);
 
         JPanel pnContent = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.BOTH;
-        gbc.insets = new Insets(0, 20, 15, 20);
+        gbc.insets = new Insets(0, 0, 10, 0);
 
-        gbc.ipady = 3;
+        gbc.ipadx = 200;
+        gbc.ipady = 5;
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -105,29 +120,25 @@ public class LoginFrame extends JFrame {
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        pnContent.add(lblPassword, gbc);
-
-        gbc.ipadx = 100;
-
-        gbc.gridx = 1;
-        gbc.gridy = 0;
         pnContent.add(txtUser, gbc);
 
-        gbc.gridx = 1;
-        gbc.gridy = 1;
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        pnContent.add(lblPassword, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 3;
         pnContent.add(pwfPassword, gbc);
 
         JPanel pnForget = new JPanel(new FlowLayout(FlowLayout.RIGHT,0,0));
         pnForget.add(lblForget);
 
-        gbc.ipady = 0;
-        gbc.gridx = 1;
-        gbc.gridy = 2;
+        gbc.gridx = 0;
+        gbc.gridy = 4;
         pnContent.add(pnForget, gbc);
 
-        JPanel pnButton = new JPanel(new FlowLayout(FlowLayout.CENTER, 30, 0));
+        JPanel pnButton = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 5));
         pnButton.add(btnLogin);
-        pnButton.add(btnExit);
 
         JPanel pnTemp = new JPanel();
         pnTemp.setPreferredSize(new Dimension(0, 20));
@@ -165,17 +176,48 @@ public class LoginFrame extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER && frThis.isFocusable() == true) {
                     login();
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_DOWN) {
                     pwfPassword.requestFocus();
                 }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                //<editor-fold desc="GỢI Ý EMAIL SAU KHI BẤM @">
+                Set<String> s = new TreeSet<>();
+                s.add("gmail.com");
+                s.add("fpt.edu.vn");
+                s.add("facebook.com");
+
+                String text = txtUser.getText();
+                int lengthText = text.length();
+                int lengthCheck = text.indexOf("@");
+                int n = lengthText - lengthCheck - 1;
+
+                for (String data : s) {
+                    String str = "";
+
+                    if (lengthCheck >= 0) {
+                        str = text.substring(0, lengthCheck + 1);
+
+                        for (int j = 0; j < n; j++) {
+                            if (n < data.length()) {
+                                str += data.charAt(j);
+                            }
+                        }
+                    }
+
+                    if (str.equals(text) && str.length() > 0 && e.getKeyCode() != 8) {
+                        txtUser.setText(text + data.substring(n));
+                        txtUser.setSelectionStart(lengthText);
+                        txtUser.setSelectionEnd(data.length() + lengthText);
+                    }
+                }
+                //</editor-fold>
             }
         });
         // </editor-fold>
@@ -188,11 +230,7 @@ public class LoginFrame extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER && frThis.isFocusable() == true) {
                     login();
                 }
 
@@ -200,22 +238,47 @@ public class LoginFrame extends JFrame {
                     txtUser.requestFocus();
                 }
             }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+            }
         });
         // </editor-fold>
     }
 
     public void login() {
+        if (checkInfor()) {
+            String email = txtUser.getText().trim();
+            String password = pwfPassword.getText().trim();
+
+            boolean kiemtra = SingletonDaoUtil.getNhanVienDaoImpl().checkLogin(email, password);
+            if (kiemtra == CoreConstant.LOGIN_SUCCESS) {
+                mainFrame = new MainFrame();
+                runProgressbar();
+            } else {
+                pwfPassword.setText("");
+                pwfPassword.requestFocus();
+            }
+        }
+    }
+
+    public boolean checkInfor() {
         String email = txtUser.getText().trim();
         String password = pwfPassword.getText().trim();
 
-        boolean kiemtra = SingletonDaoUtil.getNhanVienDaoImpl().checkLogin(email, password);
-        if (kiemtra == CoreConstant.LOGIN_SUCCESS) {
-            mainFrame = new MainFrame();
-            runProgressbar();
-        } else {
-            pwfPassword.setText("");
-            pwfPassword.requestFocus();
+        if (email.length() == 0) {
+            DialogUtils.showMessageDialog("Tài khoản không được trống, vui lòng nhập tài khoản!", CoreConstant.TYPE_WARNING);
+            txtUser.requestFocus();
+            return false;
         }
+
+        if (password.length() == 0) {
+            DialogUtils.showMessageDialog("Mật khẩu không được trống, vui lòng nhập mật khẩu!", CoreConstant.TYPE_WARNING);
+            pwfPassword.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Progressbar ">
@@ -294,6 +357,8 @@ public class LoginFrame extends JFrame {
     // </editor-fold>
 
     //<editor-fold desc="COMPONENT">
+    boolean enter = true;
+
     public JProgressBar progressBar;
     JTextField txtUser;
     JPasswordField pwfPassword;

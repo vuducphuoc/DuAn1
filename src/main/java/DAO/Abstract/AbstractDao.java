@@ -169,6 +169,8 @@ public class AbstractDao <ID extends Serializable, T> implements GenericDao<ID, 
             transaction.rollback();
             log.error(e.getMessage(), e);
             throw e;
+        } finally {
+            session.close();
         }
         return count;
     }

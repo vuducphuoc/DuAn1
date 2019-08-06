@@ -39,4 +39,17 @@ public class QuocGia {
     public void setNhaSanXuatList(List<NhaSanXuat> nhaSanXuatList) {
         this.nhaSanXuatList = nhaSanXuatList;
     }
+
+    public QuocGia() {
+    }
+
+    public QuocGia(String maqg, String tenqg) {
+        this.maqg = maqg;
+        this.tenqg = tenqg;
+    }
+
+    @Override
+    public String toString() {
+        return tenqg + " - " + maqg;
+    }
 }
