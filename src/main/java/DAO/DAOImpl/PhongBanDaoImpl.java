@@ -2,14 +2,10 @@ package DAO.DAOImpl;
 
 import DAO.Abstract.AbstractDao;
 import DAO.DAO.PhongBanDao;
-import DTO.PhongBanDTO;
 import Entity.NhanVien;
 import Entity.PhongBan;
 import Utils.HibernateUtil;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +20,7 @@ public class PhongBanDaoImpl extends AbstractDao<String, PhongBan> implements Ph
         Transaction transaction = session.beginTransaction();
         try {
             StringBuilder sql = new StringBuilder("FROM ");
-            sql.append("PhongBan WHERE MAPB LIKE :str ORDER BY MANV DESC");
+            sql.append("PhongBan WHERE MAPB LIKE :str ORDER BY MAPB DESC");
             Query query = session.createQuery(sql.toString());
             query.setParameter("str", "PB" + "%");
             list = query.list();
@@ -62,4 +58,51 @@ public class PhongBanDaoImpl extends AbstractDao<String, PhongBan> implements Ph
         }
         return phongBanList;
     }
+
+    public boolean checkNhanVienExistInPhongBan(String id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        PhongBan result = null;
+        boolean kt = false;
+
+        try {
+            String sql = " FROM "+getPersistenceClassName()+" model WHERE model.mapb = :value";
+            Query query = session.createQuery(sql.toString());
+            query.setParameter("value", id);
+            result = (PhongBan) query.uniqueResult();
+
+            if (result.getNhanVienList().size() > 0) {
+                kt = true;
+            }
+
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return kt;
+    }
+
+    public boolean checkPhongBanExist(String name) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        boolean kt = false;
+
+        try {
+            PhongBan result = findEqualUnique("TENPB", name);
+
+            if (result != null) {
+                kt = true;
+            }
+
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+        return kt;
+    }
+
 }

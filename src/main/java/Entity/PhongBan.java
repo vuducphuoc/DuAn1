@@ -16,8 +16,8 @@ public class PhongBan {
     @OneToMany(mappedBy = "phongBan" ,fetch = FetchType.LAZY)
     private List<NhanVien>  nhanVienList;
 
-    @OneToMany(mappedBy = "phongBan",fetch = FetchType.LAZY)
-    private List<PhieuBanGiao> phieuBanGiaoList;
+    @OneToMany(mappedBy = "phongBan" ,fetch = FetchType.LAZY)
+    private List<TaiSan>  taiSanList;
 
     public String getMapb() {
         return mapb;
@@ -43,12 +43,12 @@ public class PhongBan {
         this.nhanVienList = nhanVienList;
     }
 
-    public List<PhieuBanGiao> getPhieuBanGiaoList() {
-        return phieuBanGiaoList;
+    public List<TaiSan> getTaiSanList() {
+        return taiSanList;
     }
 
-    public void setPhieuBanGiaoList(List<PhieuBanGiao> phieuBanGiaoList) {
-        this.phieuBanGiaoList = phieuBanGiaoList;
+    public void setTaiSanList(List<TaiSan> taiSanList) {
+        this.taiSanList = taiSanList;
     }
 
     public PhongBan() {
@@ -61,6 +61,6 @@ public class PhongBan {
 
     @Override
     public String toString() {
-        return tenpb + " - " + mapb;
+        return tenpb;
     }
 }

@@ -9,7 +9,7 @@
 
 D:/FPT Polytechnic/IV/PRO104-DA1/QuanLyTaiSan/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:jtds:sqlserver://MLEODY:1433/QuanLyTaiSan;instance=SQLEXPRESS</jdbc-url>
+      <jdbc-url>jdbc:jtds:sqlserver://localhost:1433/QuanLyTaiSan;instance=SQLEXPRESS</jdbc-url>
       <driver-properties>
         <property name="appName" value="DataGrip" />
       </driver-properties>

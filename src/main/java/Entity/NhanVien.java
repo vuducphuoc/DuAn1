@@ -22,17 +22,8 @@ public class NhanVien {
     @Column(name = "NGAYSINH")
     private Date ngaysinh;
 
-    @Column(name = "DIACHI")
-    private String diachi;
-
-    @Column(name = "TAIKHOAN")
-    private String taikhoan;
-
-    @Column(name = "MATKHAU")
-    private String matkhau;
-
-    @Column(name = "VAITRO")
-    private boolean vaitro;
+    @Column(name = "EMAIL")
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "MAPB")
@@ -41,21 +32,14 @@ public class NhanVien {
     public NhanVien () {
 
     }
-    public NhanVien(String manv, String tennv, boolean gioitinh, Date ngaysinh, String diachi, String taikhoan, String matkhau, boolean vaitro, PhongBan phongBan) {
+
+    public NhanVien(String manv, String tennv, boolean gioitinh, Date ngaysinh, String email, PhongBan phongBan) {
         this.manv = manv;
         this.tennv = tennv;
         this.gioitinh = gioitinh;
         this.ngaysinh = ngaysinh;
-        this.diachi = diachi;
-        this.taikhoan = taikhoan;
-        this.vaitro = vaitro;
+        this.email = email;
         this.phongBan = phongBan;
-
-        if (vaitro == CoreConstant.ADMIN) {
-            this.matkhau = "123@123a";
-        } else {
-            this.matkhau = null;
-        }
     }
 
     public String getManv() {
@@ -90,36 +74,12 @@ public class NhanVien {
         this.ngaysinh = ngaysinh;
     }
 
-    public String getDiachi() {
-        return diachi;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDiachi(String diachi) {
-        this.diachi = diachi;
-    }
-
-    public String getTaikhoan() {
-        return taikhoan;
-    }
-
-    public void setTaikhoan(String taikhoan) {
-        this.taikhoan = taikhoan;
-    }
-
-    public String getMatkhau() {
-        return matkhau;
-    }
-
-    public void setMatkhau(String matkhau) {
-        this.matkhau = matkhau;
-    }
-
-    public boolean isVaitro() {
-        return vaitro;
-    }
-
-    public void setVaitro(boolean vaitro) {
-        this.vaitro = vaitro;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public PhongBan getPhongBan() {

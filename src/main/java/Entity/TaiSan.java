@@ -1,6 +1,7 @@
 package Entity;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -25,8 +26,11 @@ public class TaiSan {
     @JoinColumn(name = "THOIGIANKHAUHAO")
     private double thoigiankhauhao;
 
-    @JoinColumn(name = "NAMBDSUDUNG")
-    private int nambdsudung;
+    @JoinColumn(name = "NGAYBDSUDUNG")
+    private Date ngaybdsudung;
+
+    @JoinColumn(name = "NGUOISUDUNG")
+    private String nguoisudung;
 
     @ManyToOne
     @JoinColumn(name = "MANSX")
@@ -34,10 +38,19 @@ public class TaiSan {
 
     @ManyToOne
     @JoinColumn(name = "MAPL")
-    private PhanLoai phanLoai;
+    private PhanLoaiTaiSan phanLoaiTaiSan;
 
-    @OneToMany(mappedBy = "taiSan", fetch = FetchType.LAZY)
-    private List<PhieuBanGiao> phieuBanGiaoList;
+    @ManyToOne
+    @JoinColumn(name = "MAPB")
+    private PhongBan phongBan;
+
+    public String getNguoisudung() {
+        return nguoisudung;
+    }
+
+    public void setNguoisudung(String nguoisudung) {
+        this.nguoisudung = nguoisudung;
+    }
 
     public String getMats() {
         return mats;
@@ -95,28 +108,28 @@ public class TaiSan {
         this.nhaSanXuat = nhaSanXuat;
     }
 
-    public PhanLoai getPhanLoai() {
-        return phanLoai;
+    public PhanLoaiTaiSan getPhanLoaiTaiSan() {
+        return phanLoaiTaiSan;
     }
 
-    public void setPhanLoai(PhanLoai phanLoai) {
-        this.phanLoai = phanLoai;
+    public void setPhanLoaiTaiSan(PhanLoaiTaiSan phanLoaiTaiSan) {
+        this.phanLoaiTaiSan = phanLoaiTaiSan;
     }
 
-    public List<PhieuBanGiao> getPhieuBanGiaoList() {
-        return phieuBanGiaoList;
+    public Date getNgaybdsudung() {
+        return ngaybdsudung;
     }
 
-    public void setPhieuBanGiaoList(List<PhieuBanGiao> phieuBanGiaoList) {
-        this.phieuBanGiaoList = phieuBanGiaoList;
+    public void setNgaybdsudung(Date ngaybdsudung) {
+        this.ngaybdsudung = ngaybdsudung;
     }
 
-    public int getNambdsudung() {
-        return nambdsudung;
+    public PhongBan getPhongBan() {
+        return phongBan;
     }
 
-    public void setNambdsudung(int nambdsudung) {
-        this.nambdsudung = nambdsudung;
+    public void setPhongBan(PhongBan phongBan) {
+        this.phongBan = phongBan;
     }
 
     @Override

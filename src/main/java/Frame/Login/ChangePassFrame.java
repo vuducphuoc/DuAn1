@@ -2,7 +2,9 @@ package Frame.Login;
 
 import Contant.CoreConstant;
 import Entity.NhanVien;
+import Entity.TaiKhoan;
 import Utils.DialogUtils;
+import Utils.MailUtils;
 import Utils.SingletonDaoUtil;
 
 import java.awt.*;
@@ -84,8 +86,6 @@ public class ChangePassFrame extends JFrame{
         txtNewPass.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 15));
         txtOldPass.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 15));
         txtRepass.setFont(new Font("Segoe UI", Font.ROMAN_BASELINE, 15));
-
-
         //</editor-fold>
 
 
@@ -153,6 +153,9 @@ public class ChangePassFrame extends JFrame{
     }
 
     private void addEvents() {
+        NhanVien nhanVien = SingletonDaoUtil.getNhanVienDaoImpl().findEqualUnique("manv", LoginFrame.accountLogin.getNhanvien());
+        lblShowName.setText(nhanVien.getTennv());
+
         btnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -163,41 +166,34 @@ public class ChangePassFrame extends JFrame{
         btnSave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (changePassword()) {
-                    DialogUtils.showMessageDialog("Đổi mật khẩu thành công!", CoreConstant.TYPE_INFORMATION);
-                    frame.setVisible(false);
-                }
+            if (changePassword()) {
+                DialogUtils.showMessageDialog("Đổi mật khẩu thành công!", CoreConstant.TYPE_INFORMATION);
+                frame.setVisible(false);
+            }
             }
         });
     }
 
     //xử lý đổi mật khẩu
     private boolean changePassword(){
-        NhanVien nvLogin       = LoginFrame.nvLogin;
+        TaiKhoan accountLogin  = LoginFrame.accountLogin;
 
         String oldPass  = txtOldPass.getText();
         String newPass  = txtNewPass.getText();
         String rePass   = txtRepass.getText();
 
         if (checkInfo()) {
-            nvLogin.setMatkhau(newPass);
-            LoginFrame.nvLogin = SingletonDaoUtil.getNhanVienDaoImpl().update(nvLogin);
+            accountLogin.setMatkhau(newPass);
+            LoginFrame.accountLogin = SingletonDaoUtil.getTaiKhoanDaoImpl().update(accountLogin);
             return true;
         }
-        
         return false;
     }
-    
+
     //check thông tin đổi mật khẩu
     private boolean checkInfo(){
         if (txtOldPass.getText().length() == 0) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập mật khẩu hiện tại!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
-            txtOldPass.requestFocus();
-            return false;
-        }
-        
-        if (!LoginFrame.nvLogin.getMatkhau().equalsIgnoreCase(txtOldPass.getText())) {
-            JOptionPane.showMessageDialog(rootPane, "Mật khẩu hiện tại không đúng!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
             txtOldPass.requestFocus();
             return false;
         }

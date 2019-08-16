@@ -1,20 +1,18 @@
 package Utils;
 
-
 import DAO.DAOImpl.*;
 
-
-/**
- * Created by Admin on 2/9/2017.
- */
 public class SingletonDaoUtil {
     private static NhanVienDaoImpl nhanVienDaoImpl = null;
     private static NhaSanXuatDaoImpl nhaSanXuatDaoImpl = null;
-    private static PhanLoaiDaoImpl phanLoaiDaoImpl = null;
-    private static PhieuBanGiaoDaoImpl phieuBanGiaoDaoImpl = null;
+    private static PhanLoaiTaiSanDaoImpl phanLoaiTaiSanDaoImpl = null;
     private static PhongBanDaoImpl phongBanDaoImpl = null;
     private static QuocGiaDaoImpl quocGiaDaoImpl = null;
     private static TaiSanDaoImpl taiSanDaoImpl = null;
+    private static TaiKhoanDaoImpl taiKhoanDaoImpl = null;
+    private static VaiTroDaoImpl vaiTroDaoImpl = null;
+    private static BaoCaoThongKeDaoImpl baoCaoThongKeDaoImpl = null;
+
 
 
     public static NhanVienDaoImpl getNhanVienDaoImpl() {
@@ -23,23 +21,24 @@ public class SingletonDaoUtil {
         }
         return nhanVienDaoImpl;
     }
+
+    public static BaoCaoThongKeDaoImpl getBaoCaoThongKeDaoImpl() {
+        if (baoCaoThongKeDaoImpl == null) {
+            baoCaoThongKeDaoImpl = new BaoCaoThongKeDaoImpl();
+        }
+        return baoCaoThongKeDaoImpl;
+    }
     public static NhaSanXuatDaoImpl getNhaSanXuatDaoImpl() {
         if (nhaSanXuatDaoImpl == null) {
             nhaSanXuatDaoImpl = new NhaSanXuatDaoImpl();
         }
         return nhaSanXuatDaoImpl;
     }
-    public static PhanLoaiDaoImpl getPhanLoaiDaoImpl() {
-        if (phanLoaiDaoImpl == null) {
-            phanLoaiDaoImpl = new PhanLoaiDaoImpl();
+    public static PhanLoaiTaiSanDaoImpl getPhanLoaiTaiSanDaoImpl() {
+        if (phanLoaiTaiSanDaoImpl == null) {
+            phanLoaiTaiSanDaoImpl = new PhanLoaiTaiSanDaoImpl();
         }
-        return phanLoaiDaoImpl;
-    }
-    public static PhieuBanGiaoDaoImpl getPhieuBanGiaoDaoImpl() {
-        if (phieuBanGiaoDaoImpl == null) {
-            phieuBanGiaoDaoImpl = new PhieuBanGiaoDaoImpl();
-        }
-        return phieuBanGiaoDaoImpl;
+        return phanLoaiTaiSanDaoImpl;
     }
     public static PhongBanDaoImpl getPhongBanDaoImpl() {
         if (phongBanDaoImpl == null) {
@@ -58,6 +57,18 @@ public class SingletonDaoUtil {
             taiSanDaoImpl = new TaiSanDaoImpl();
         }
         return taiSanDaoImpl;
+    }
+    public static TaiKhoanDaoImpl getTaiKhoanDaoImpl() {
+        if (taiKhoanDaoImpl == null) {
+            taiKhoanDaoImpl = new TaiKhoanDaoImpl();
+        }
+        return taiKhoanDaoImpl;
+    }
+    public static VaiTroDaoImpl getVaiTroDaoImpl() {
+        if (vaiTroDaoImpl == null) {
+            vaiTroDaoImpl = new VaiTroDaoImpl();
+        }
+        return vaiTroDaoImpl;
     }
 
 }

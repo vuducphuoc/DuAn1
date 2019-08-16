@@ -27,13 +27,12 @@
 
         <mapping class="Entity.NhanVien" />
         <mapping class="Entity.NhaSanXuat" />
-        <mapping class="Entity.PhanLoai" />
-        <mapping class="Entity.PhieuBanGiao" />
+        <mapping class="Entity.PhanLoaiTaiSan" />
         <mapping class="Entity.PhongBan" />
         <mapping class="Entity.QuocGia" />
         <mapping class="Entity.TaiSan" />
-        <mapping class="Entity.TaiSan" />
-        <mapping class="Entity.TaiSan" />
+        <mapping class="Entity.VaiTro" />
+        <mapping class="Entity.TaiKhoan" />
 
     </session-factory>
 </hibernate-configuration>

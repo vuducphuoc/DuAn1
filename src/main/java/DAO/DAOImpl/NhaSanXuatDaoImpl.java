@@ -2,10 +2,8 @@ package DAO.DAOImpl;
 
 import DAO.Abstract.AbstractDao;
 import DAO.DAO.NhaSanXuatDao;
-import DTO.NhaSanXuatDTO;
 import Entity.NhaSanXuat;
-import Entity.NhanVien;
-import Entity.PhongBan;
+import Entity.QuocGia;
 import Utils.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -13,6 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +39,30 @@ public class NhaSanXuatDaoImpl extends AbstractDao<Integer, NhaSanXuat> implemen
             session.close();
         }
         return nhaSanXuatList;
+    }
+
+    public boolean checkNhaSanXuatExist(String name, QuocGia quocGia) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        NhaSanXuat nhaSanXuat = new NhaSanXuat();
+
+        try {
+            String sql = " FROM "+getPersistenceClassName()+" model WHERE model.TENNSX :name && MAQG = :maqg";
+            Query query = session.createQuery(sql.toString());
+            query.setParameter("name", name);
+            query.setParameter("maqg", quocGia.getMaqg());
+            nhaSanXuat = (NhaSanXuat) query.uniqueResult();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+       if (nhaSanXuat == null) {
+           return false;
+       } else {
+           return true;
+       }
     }
 }
 

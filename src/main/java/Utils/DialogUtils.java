@@ -1,6 +1,7 @@
 package Utils;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class DialogUtils {
 
@@ -29,4 +30,5 @@ public class DialogUtils {
              return false;
         }
     }
+
 }
