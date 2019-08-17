@@ -290,7 +290,7 @@ public class LoginFrame extends JFrame {
                 pwfPassword.setText("");
                 pwfPassword.requestFocus();
             } else {
-                if (accountLogin.isTinhtrang() == true) {
+                if (accountLogin.isTinhTrang() == true) {
                     DialogUtils.showMessageDialog("Xin lỗi! Tài khoản của bạn đã bị khóa!", CoreConstant.TYPE_WARNING);
                     txtUser.requestFocus();
                 } else {

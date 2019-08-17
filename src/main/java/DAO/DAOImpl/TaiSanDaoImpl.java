@@ -4,7 +4,6 @@ import DAO.Abstract.AbstractDao;
 import DAO.DAO.TaiSanDao;
 import Entity.*;
 import Utils.HibernateUtil;
-import Utils.SingletonDaoUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -45,9 +44,9 @@ public class TaiSanDaoImpl extends AbstractDao<String, TaiSan> implements TaiSan
         Transaction transaction = session.beginTransaction();
         try {
             StringBuilder sql1 = new StringBuilder("from ");
-            sql1.append(getPersistenceClassName()).append(" where phongBan = :mapb ");
+            sql1.append(getPersistenceClassName()).append(" where phongBan = :phongBan ");
             Query query1 = session.createQuery(sql1.toString());
-            query1.setParameter("mapb", phongBan);
+            query1.setParameter("phongBan", phongBan);
             taiSanList = query1.list();
             transaction.commit();
         } catch (HibernateException e) {
@@ -59,15 +58,15 @@ public class TaiSanDaoImpl extends AbstractDao<String, TaiSan> implements TaiSan
         return taiSanList;
     }
 
-    public List<TaiSan> getByPhanLoai(PhanLoaiTaiSan phanLoaiTaiSan) {
+    public List<TaiSan> getByPhanLoai(PhanLoai phanLoai) {
         List<TaiSan> taiSanList = new ArrayList<>();
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         try {
             StringBuilder sql1 = new StringBuilder("from ");
-            sql1.append(getPersistenceClassName()).append(" where phanLoaiTaiSan = :phanLoaiTaiSan ");
+            sql1.append(getPersistenceClassName()).append(" where phanLoai = :phanLoai ");
             Query query1 = session.createQuery(sql1.toString());
-            query1.setParameter("phanLoaiTaiSan", phanLoaiTaiSan);
+            query1.setParameter("phanLoai", phanLoai);
             taiSanList = query1.list();
             transaction.commit();
         } catch (HibernateException e) {
@@ -86,8 +85,8 @@ public class TaiSanDaoImpl extends AbstractDao<String, TaiSan> implements TaiSan
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         try {
-            StringBuilder sql = new StringBuilder("FROM ");
-            sql.append("TaiSan WHERE MATS LIKE :str ORDER BY MATS DESC");
+            StringBuilder sql = new StringBuilder("FROM ").append(getPersistenceClassName());
+            sql.append(" WHERE id LIKE :str ORDER BY MATS DESC");
             Query query = session.createQuery(sql.toString());
             query.setParameter("str", "TS" + "%");
             list = query.list();
@@ -99,10 +98,10 @@ public class TaiSanDaoImpl extends AbstractDao<String, TaiSan> implements TaiSan
         } finally {
             session.close();
         }
-        return taiSan.getMats();
+        return taiSan.getId();
     }
 
-    public List<TaiSan> searchByProperty(Map<String, Object> property, String gia, String phanloai) {
+    public List<TaiSan> searchByProperty(Map<String, Object> property, String gia, PhanLoai phanLoai) {
         List<TaiSan> taiSanList = new ArrayList<>();
 
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -115,8 +114,8 @@ public class TaiSanDaoImpl extends AbstractDao<String, TaiSan> implements TaiSan
                 sql1.append(" AND ( ").append(gia).append(" )");
             }
 
-            if (phanloai != null) {
-                sql1.append(" AND ( ").append(phanloai).append(" )");
+            if (phanLoai != null) {
+                sql1.append(" AND ( phanLoai = :phanLoai").append(" )");
             }
 
             if (property != null) {
@@ -125,13 +124,17 @@ public class TaiSanDaoImpl extends AbstractDao<String, TaiSan> implements TaiSan
             }
 
             Query query1 = session.createQuery(sql1.toString());
+
             if (property != null) {
                 setParameterToQuery(nameQuery, query1);
             }
+
+            if (phanLoai != null) {
+                query1.setParameter("phanLoai", phanLoai);
+            }
+
             taiSanList = query1.list();
-            transaction.commit();
         } catch (HibernateException e) {
-            transaction.rollback();
             throw e;
         } finally {
             session.close();

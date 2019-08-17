@@ -8,28 +8,28 @@ import java.util.List;
 public class QuocGia {
 
     @Id
-    private String maqg;
+    private String id;
 
-    @Column(name = "TENQG")
-    private String tenqg;
+    @Column(name = "TENQUOCGIA")
+    private String tenQuocGia;
 
     @OneToMany(mappedBy = "quocGia", fetch = FetchType.LAZY)
     private List<NhaSanXuat> nhaSanXuatList;
 
-    public String getMaqg() {
-        return maqg;
+    public String getId() {
+        return id;
     }
 
-    public void setMaqg(String maqg) {
-        this.maqg = maqg;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getTenqg() {
-        return tenqg;
+    public String getTenQuocGia() {
+        return tenQuocGia;
     }
 
-    public void setTenqg(String tenqg) {
-        this.tenqg = tenqg;
+    public void setTenQuocGia(String tenQuocGia) {
+        this.tenQuocGia = tenQuocGia;
     }
 
     public List<NhaSanXuat> getNhaSanXuatList() {
@@ -43,13 +43,13 @@ public class QuocGia {
     public QuocGia() {
     }
 
-    public QuocGia(String maqg, String tenqg) {
-        this.maqg = maqg;
-        this.tenqg = tenqg;
+    public QuocGia(String id, String tenQuocGia) {
+        this.id = id;
+        this.tenQuocGia = tenQuocGia;
     }
 
     @Override
     public String toString() {
-        return tenqg + " - " + maqg;
+        return    tenQuocGia + " - " + id;
     }
 }

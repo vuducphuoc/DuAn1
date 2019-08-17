@@ -6,7 +6,7 @@
     <session-factory>
                 <!-- Database connection settings -->
                 <property name="connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
-                <property name="connection.url">jdbc:jtds:sqlserver://MLEODY:1433/QuanLyTaiSan;instance=SQLEXPRESS</property>
+                <property name="connection.url">jdbc:jtds:sqlserver://localhost:1433/QUANLYTAISAN_VERSION2;instance=SQLEXPRESS</property>
                 <property name="connection.username">sa</property>
                 <property name="connection.password">123456</property>
 
@@ -27,12 +27,15 @@
 
         <mapping class="Entity.NhanVien" />
         <mapping class="Entity.NhaSanXuat" />
-        <mapping class="Entity.PhanLoaiTaiSan" />
+        <mapping class="Entity.PhanLoai" />
         <mapping class="Entity.PhongBan" />
         <mapping class="Entity.QuocGia" />
         <mapping class="Entity.TaiSan" />
         <mapping class="Entity.VaiTro" />
         <mapping class="Entity.TaiKhoan" />
+        <mapping class="Entity.Kho" />
+        <mapping class="Entity.PhieuBanGiao" />
+        <mapping class="Entity.PhieuBanGiaoChiTiet" />
 
     </session-factory>
 </hibernate-configuration>

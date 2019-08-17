@@ -47,10 +47,10 @@ public class NhaSanXuatDaoImpl extends AbstractDao<Integer, NhaSanXuat> implemen
         NhaSanXuat nhaSanXuat = new NhaSanXuat();
 
         try {
-            String sql = " FROM "+getPersistenceClassName()+" model WHERE model.TENNSX :name && MAQG = :maqg";
+            String sql = " FROM "+getPersistenceClassName()+" model WHERE model.tenNhaSanXuat :name AND quocGia = :quocGia";
             Query query = session.createQuery(sql.toString());
             query.setParameter("name", name);
-            query.setParameter("maqg", quocGia.getMaqg());
+            query.setParameter("quocGia", quocGia);
             nhaSanXuat = (NhaSanXuat) query.uniqueResult();
         } catch (HibernateException e) {
             transaction.rollback();

@@ -31,7 +31,7 @@ public class AbstractDao <ID extends Serializable, T> implements GenericDao<ID, 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         try {
-            StringBuilder sql = new StringBuilder("from ");
+            StringBuilder sql = new StringBuilder("FROM ");
             sql.append(this.getPersistenceClassName());
             Query query = session.createQuery(sql.toString());
             list = query.list();

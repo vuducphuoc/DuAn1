@@ -22,8 +22,8 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         try {
-            StringBuilder sql = new StringBuilder("FROM ");
-            sql.append("NhanVien WHERE MANV LIKE :str ORDER BY MANV DESC");
+            StringBuilder sql = new StringBuilder("FROM ").append(getPersistenceClassName());
+            sql.append(" WHERE id LIKE :str ORDER BY id DESC");
             Query query = session.createQuery(sql.toString());
             query.setParameter("str", "NV" + "%");
             list = query.list();
@@ -35,19 +35,19 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
         } finally {
             session.close();
         }
-        return nv.getManv();
+        return nv.getId();
     }
 
     public List<NhanVien> getByPhongBan(PhongBan phongBan) {
         List<NhanVien> nhanVienList = new ArrayList<>();
-        String mapb = phongBan.getMapb();
+        String mapb = phongBan.getId();
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
 
         try {
             StringBuilder sql1 = new StringBuilder("from ");
-            sql1.append(getPersistenceClassName()).append(" where mapb = :mapb ");
+            sql1.append(getPersistenceClassName()).append(" WHERE id = :mapb ");
             Query query1 = session.createQuery(sql1.toString());
             query1.setParameter("mapb", mapb);
             nhanVienList = query1.list();
@@ -64,7 +64,7 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
 
     public List<NhanVien> searchByProperty(Map<String, Object> property, PhongBan phongBan) {
     List<NhanVien> nhanVienList = new ArrayList<>();
-    String mapb = phongBan.getMapb();
+    String mapb = phongBan.getId();
 
     Session session = HibernateUtil.getSessionFactory().openSession();
     Transaction transaction = session.beginTransaction();
@@ -72,7 +72,7 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
 
     try {
         StringBuilder sql1 = new StringBuilder("from ");
-        sql1.append(getPersistenceClassName()).append(" where (mapb = :mapb) AND ( ").append(nameQuery[0]).append(" )");
+        sql1.append(getPersistenceClassName()).append(" where (id = :mapb) AND ( ").append(nameQuery[0]).append(" )");
         Query query1 = session.createQuery(sql1.toString());
         query1.setParameter("mapb", mapb);
         setParameterToQuery(nameQuery, query1);
@@ -90,7 +90,7 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
 
     public boolean checkEmailExist(String email) {
 
-        NhanVien nhanVien = findEqualUnique("taikhoan", email);
+        NhanVien nhanVien = findEqualUnique("email", email);
         if (nhanVien != null) {
             return true;
         } else {
@@ -98,18 +98,4 @@ public class NhanVienDaoImpl extends AbstractDao<String, NhanVien> implements Nh
         }
     }
 
-    public boolean checkDeleteNhanVien(String id) {
-        List<TaiSan> taiSanList = SingletonDaoUtil.getTaiSanDaoImpl().findAll();
-        boolean check = false;
-        for (TaiSan item : taiSanList) {
-            String str1 = item.getNguoisudung();
-            String[] temp = str1.split("\n");
-
-            for(int i=0; i<temp.length; i++) {
-                String maNV = temp[i].substring(0,7);
-                if (maNV.equalsIgnoreCase(id)) check = true;
-            }
-        }
-        return check;
-    }
 }

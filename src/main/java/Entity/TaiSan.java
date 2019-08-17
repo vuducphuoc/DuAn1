@@ -2,102 +2,116 @@ package Entity;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "TAISAN")
 public class TaiSan {
 
     @Id
-    private String mats;
+    private String id;
 
-    @JoinColumn(name = "TENTS")
-    private String tents;
+    @JoinColumn(name = "TENTAISAN")
+    private String tenTaiSan;
 
     @JoinColumn(name = "MOTA")
-    private String mota;
+    private String moTa;
 
     @JoinColumn(name = "NGUYENGIA")
-    private int nguyengia;
+    private int nguyenGia;
 
-    @JoinColumn(name = "TILEKHAUHAO")
-    private double tilekhauhao;
+    @JoinColumn(name = "TYLEKHAUHAO")
+    private double tyLeKhauHao;
 
     @JoinColumn(name = "THOIGIANKHAUHAO")
-    private double thoigiankhauhao;
+    private int thoiGianKhauHao;
 
-    @JoinColumn(name = "NGAYBDSUDUNG")
-    private Date ngaybdsudung;
+    @JoinColumn(name = "NAMBDSUDUNG")
+    private int namBDSuDung;
 
-    @JoinColumn(name = "NGUOISUDUNG")
-    private String nguoisudung;
+    @JoinColumn(name = "TINHTRANG")
+    private boolean tinhTrang;
 
     @ManyToOne
-    @JoinColumn(name = "MANSX")
+    @JoinColumn(name = "NHASANXUAT")
     private NhaSanXuat nhaSanXuat;
 
     @ManyToOne
-    @JoinColumn(name = "MAPL")
-    private PhanLoaiTaiSan phanLoaiTaiSan;
+    @JoinColumn(name = "PHANLOAI")
+    private PhanLoai phanLoai;
 
     @ManyToOne
-    @JoinColumn(name = "MAPB")
-    private PhongBan phongBan;
+    @JoinColumn(name = "KHO")
+    private Kho kho;
 
-    public String getNguoisudung() {
-        return nguoisudung;
+    @OneToOne (mappedBy = "taiSan")
+    private PhieuBanGiaoChiTiet phieuBanGiaoChiTiet;
+
+    public TaiSan() {
     }
 
-    public void setNguoisudung(String nguoisudung) {
-        this.nguoisudung = nguoisudung;
+
+    public String getId() {
+        return id;
     }
 
-    public String getMats() {
-        return mats;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setMats(String mats) {
-        this.mats = mats;
+    public String getTenTaiSan() {
+        return tenTaiSan;
     }
 
-    public String getTents() {
-        return tents;
+    public void setTenTaiSan(String tenTaiSan) {
+        this.tenTaiSan = tenTaiSan;
     }
 
-    public void setTents(String tents) {
-        this.tents = tents;
+    public String getMoTa() {
+        return moTa;
     }
 
-    public String getMota() {
-        return mota;
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
     }
 
-    public void setMota(String mota) {
-        this.mota = mota;
+    public int getNguyenGia() {
+        return nguyenGia;
     }
 
-    public int getNguyengia() {
-        return nguyengia;
+    public void setNguyenGia(int nguyenGia) {
+        this.nguyenGia = nguyenGia;
     }
 
-    public void setNguyengia(int nguyengia) {
-        this.nguyengia = nguyengia;
+    public double getTyLeKhauHao() {
+        return tyLeKhauHao;
     }
 
-    public double getTilekhauhao() {
-        return tilekhauhao;
+    public void setTyLeKhauHao(double tyLeKhauHao) {
+        this.tyLeKhauHao = tyLeKhauHao;
     }
 
-    public void setTilekhauhao(double tilekhauhao) {
-        this.tilekhauhao = tilekhauhao;
+    public int getThoiGianKhauHao() {
+        return thoiGianKhauHao;
     }
 
-    public double getThoigiankhauhao() {
-        return thoigiankhauhao;
+    public void setThoiGianKhauHao(int thoiGianKhauHao) {
+        this.thoiGianKhauHao = thoiGianKhauHao;
     }
 
-    public void setThoigiankhauhao(double thoigiankhauhao) {
-        this.thoigiankhauhao = thoigiankhauhao;
+    public int getNamBDSuDung() {
+        return namBDSuDung;
+    }
+
+    public void setNamBDSuDung(int namBDSuDung) {
+        this.namBDSuDung = namBDSuDung;
+    }
+
+    public boolean isTinhTrang() {
+        return tinhTrang;
+    }
+
+    public void setTinhTrang(boolean tinhTrang) {
+        this.tinhTrang = tinhTrang;
     }
 
     public NhaSanXuat getNhaSanXuat() {
@@ -108,32 +122,27 @@ public class TaiSan {
         this.nhaSanXuat = nhaSanXuat;
     }
 
-    public PhanLoaiTaiSan getPhanLoaiTaiSan() {
-        return phanLoaiTaiSan;
+    public PhanLoai getPhanLoai() {
+        return phanLoai;
     }
 
-    public void setPhanLoaiTaiSan(PhanLoaiTaiSan phanLoaiTaiSan) {
-        this.phanLoaiTaiSan = phanLoaiTaiSan;
+    public void setPhanLoai(PhanLoai phanLoai) {
+        this.phanLoai = phanLoai;
     }
 
-    public Date getNgaybdsudung() {
-        return ngaybdsudung;
+    public Kho getKho() {
+        return kho;
     }
 
-    public void setNgaybdsudung(Date ngaybdsudung) {
-        this.ngaybdsudung = ngaybdsudung;
+    public void setKho(Kho kho) {
+        this.kho = kho;
     }
 
-    public PhongBan getPhongBan() {
-        return phongBan;
+    public PhieuBanGiaoChiTiet getPhieuBanGiaoChiTiet() {
+        return phieuBanGiaoChiTiet;
     }
 
-    public void setPhongBan(PhongBan phongBan) {
-        this.phongBan = phongBan;
-    }
-
-    @Override
-    public String toString() {
-        return tents + " - " + mats;
+    public void setPhieuBanGiaoChiTiet(PhieuBanGiaoChiTiet phieuBanGiaoChiTiet) {
+        this.phieuBanGiaoChiTiet = phieuBanGiaoChiTiet;
     }
 }

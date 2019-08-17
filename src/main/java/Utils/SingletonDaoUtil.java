@@ -5,7 +5,7 @@ import DAO.DAOImpl.*;
 public class SingletonDaoUtil {
     private static NhanVienDaoImpl nhanVienDaoImpl = null;
     private static NhaSanXuatDaoImpl nhaSanXuatDaoImpl = null;
-    private static PhanLoaiTaiSanDaoImpl phanLoaiTaiSanDaoImpl = null;
+    private static PhanLoaiDaoImpl phanLoaiTaiSanDaoImpl = null;
     private static PhongBanDaoImpl phongBanDaoImpl = null;
     private static QuocGiaDaoImpl quocGiaDaoImpl = null;
     private static TaiSanDaoImpl taiSanDaoImpl = null;
@@ -13,7 +13,22 @@ public class SingletonDaoUtil {
     private static VaiTroDaoImpl vaiTroDaoImpl = null;
     private static BaoCaoThongKeDaoImpl baoCaoThongKeDaoImpl = null;
 
+    private static PhieuBanGiaoDaoImpl phieuBanGiaoDaoImpl = null;
+    private static PhieuBanGiaoChiTietDaoImpl phieuBanGiaoChiTietDaoImpl = null;
 
+    public static PhieuBanGiaoDaoImpl getPhieuBanGiaoDaoImpl() {
+        if (phieuBanGiaoDaoImpl == null) {
+            phieuBanGiaoDaoImpl = new PhieuBanGiaoDaoImpl();
+        }
+        return phieuBanGiaoDaoImpl;
+    }
+
+    public static PhieuBanGiaoChiTietDaoImpl getPhieuBanGiaoChiTietDaoImpl() {
+        if (phieuBanGiaoChiTietDaoImpl == null) {
+            phieuBanGiaoChiTietDaoImpl = new PhieuBanGiaoChiTietDaoImpl();
+        }
+        return phieuBanGiaoChiTietDaoImpl;
+    }
 
     public static NhanVienDaoImpl getNhanVienDaoImpl() {
         if (nhanVienDaoImpl == null) {
@@ -34,9 +49,9 @@ public class SingletonDaoUtil {
         }
         return nhaSanXuatDaoImpl;
     }
-    public static PhanLoaiTaiSanDaoImpl getPhanLoaiTaiSanDaoImpl() {
+    public static PhanLoaiDaoImpl getPhanLoaiTaiSanDaoImpl() {
         if (phanLoaiTaiSanDaoImpl == null) {
-            phanLoaiTaiSanDaoImpl = new PhanLoaiTaiSanDaoImpl();
+            phanLoaiTaiSanDaoImpl = new PhanLoaiDaoImpl();
         }
         return phanLoaiTaiSanDaoImpl;
     }

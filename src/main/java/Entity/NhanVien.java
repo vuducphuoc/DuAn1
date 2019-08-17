@@ -11,67 +11,72 @@ import java.util.Date;
 public class NhanVien {
 
     @Id
-    private String manv;
+    private String id;
 
-    @Column(name = "TENNV")
-    private String tennv;
+    @Column(name = "TENNHANVIEN")
+    private String tenNhanVien;
 
     @Column(name = "GIOITINH")
-    private boolean gioitinh;
+    private boolean gioiTinh;
 
     @Column(name = "NGAYSINH")
-    private Date ngaysinh;
+    private Date ngaySinh;
 
     @Column(name = "EMAIL")
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "MAPB")
+    @JoinColumn(name = "PHONGBAN")
     private PhongBan phongBan;
 
-    public NhanVien () {
+//    @OneToOne(mappedBy = "nhanVienBanGiao")
+//    private PhieuBanGiao phieuBanGiao1;
+//
+//    @OneToOne(mappedBy = "nhanVienNhan")
+//    private PhieuBanGiao phieuBanGiao2;
 
+    public NhanVien() {
     }
 
-    public NhanVien(String manv, String tennv, boolean gioitinh, Date ngaysinh, String email, PhongBan phongBan) {
-        this.manv = manv;
-        this.tennv = tennv;
-        this.gioitinh = gioitinh;
-        this.ngaysinh = ngaysinh;
+    public NhanVien(String id, String tenNhanVien, boolean gioiTinh, Date ngaySinh, String email, PhongBan phongBan) {
+        this.id = id;
+        this.tenNhanVien = tenNhanVien;
+        this.gioiTinh = gioiTinh;
+        this.ngaySinh = ngaySinh;
         this.email = email;
         this.phongBan = phongBan;
     }
 
-    public String getManv() {
-        return manv;
+    public String getId() {
+        return id;
     }
 
-    public void setManv(String manv) {
-        this.manv = manv;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getTennv() {
-        return tennv;
+    public String getTenNhanVien() {
+        return tenNhanVien;
     }
 
-    public void setTennv(String tennv) {
-        this.tennv = tennv;
+    public void setTenNhanVien(String tenNhanVien) {
+        this.tenNhanVien = tenNhanVien;
     }
 
-    public boolean isGioitinh() {
-        return gioitinh;
+    public boolean isGioiTinh() {
+        return gioiTinh;
     }
 
-    public void setGioitinh(boolean gioitinh) {
-        this.gioitinh = gioitinh;
+    public void setGioiTinh(boolean gioiTinh) {
+        this.gioiTinh = gioiTinh;
     }
 
-    public Date getNgaysinh() {
-        return ngaysinh;
+    public Date getNgaySinh() {
+        return ngaySinh;
     }
 
-    public void setNgaysinh(Date ngaysinh) {
-        this.ngaysinh = ngaysinh;
+    public void setNgaySinh(Date ngaySinh) {
+        this.ngaySinh = ngaySinh;
     }
 
     public String getEmail() {
@@ -90,8 +95,4 @@ public class NhanVien {
         this.phongBan = phongBan;
     }
 
-    @Override
-    public String toString() {
-        return tennv + " - " + manv;
-    }
 }

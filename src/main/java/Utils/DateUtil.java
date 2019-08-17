@@ -11,10 +11,6 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author MSI
- */
 public class DateUtil {
 
     static final SimpleDateFormat DATE_FORMATER1 = new SimpleDateFormat("dd-MM-yyyy");

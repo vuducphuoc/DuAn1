@@ -8,31 +8,36 @@ import java.util.List;
 public class PhongBan {
 
     @Id
-    private String mapb;
+    private String id;
 
-    @Column(name = "TENPB")
-    private String tenpb;
+    @Column(name = "TENPHONGBAN")
+    private String tenPhongBan;
 
     @OneToMany(mappedBy = "phongBan" ,fetch = FetchType.LAZY)
     private List<NhanVien>  nhanVienList;
 
-    @OneToMany(mappedBy = "phongBan" ,fetch = FetchType.LAZY)
-    private List<TaiSan>  taiSanList;
-
-    public String getMapb() {
-        return mapb;
+    public PhongBan() {
     }
 
-    public void setMapb(String mapb) {
-        this.mapb = mapb;
+    public PhongBan(String id, String tenPhongBan) {
+        this.id = id;
+        this.tenPhongBan = tenPhongBan;
     }
 
-    public String getTenpb() {
-        return tenpb;
+    public String getId() {
+        return id;
     }
 
-    public void setTenpb(String tenpb) {
-        this.tenpb = tenpb;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTenPhongBan() {
+        return tenPhongBan;
+    }
+
+    public void setTenPhongBan(String tenPhongBan) {
+        this.tenPhongBan = tenPhongBan;
     }
 
     public List<NhanVien> getNhanVienList() {
@@ -41,26 +46,5 @@ public class PhongBan {
 
     public void setNhanVienList(List<NhanVien> nhanVienList) {
         this.nhanVienList = nhanVienList;
-    }
-
-    public List<TaiSan> getTaiSanList() {
-        return taiSanList;
-    }
-
-    public void setTaiSanList(List<TaiSan> taiSanList) {
-        this.taiSanList = taiSanList;
-    }
-
-    public PhongBan() {
-    }
-
-    public PhongBan(String mapb, String tenpb) {
-        this.mapb = mapb;
-        this.tenpb = tenpb;
-    }
-
-    @Override
-    public String toString() {
-        return tenpb;
     }
 }

@@ -153,8 +153,10 @@ public class ChangePassFrame extends JFrame{
     }
 
     private void addEvents() {
-        NhanVien nhanVien = SingletonDaoUtil.getNhanVienDaoImpl().findEqualUnique("manv", LoginFrame.accountLogin.getNhanvien());
-        lblShowName.setText(nhanVien.getTennv());
+        NhanVien nhanVien = SingletonDaoUtil.getNhanVienDaoImpl().findEqualUnique("id", LoginFrame.accountLogin.getNhanVien());
+        if (nhanVien != null) {
+            lblShowName.setText(nhanVien.getTenNhanVien());
+        }
 
         btnCancel.addActionListener(new ActionListener() {
             @Override
@@ -183,7 +185,7 @@ public class ChangePassFrame extends JFrame{
         String rePass   = txtRepass.getText();
 
         if (checkInfo()) {
-            accountLogin.setMatkhau(newPass);
+            accountLogin.setMatKhau(newPass);
             LoginFrame.accountLogin = SingletonDaoUtil.getTaiKhoanDaoImpl().update(accountLogin);
             return true;
         }

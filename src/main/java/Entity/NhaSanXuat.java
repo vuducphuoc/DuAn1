@@ -11,12 +11,20 @@ public class NhaSanXuat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "TENNSX")
-    private String tennsx;
+    @Column(name = "TENNHASANXUAT")
+    private String tenNhaSanXuat;
 
     @ManyToOne()
-    @JoinColumn(name = "MAQG")
+    @JoinColumn(name = "QUOCGIA")
     private QuocGia quocGia;
+
+    public NhaSanXuat() {
+    }
+
+    public NhaSanXuat(String tenNhaSanXuat, QuocGia quocGia) {
+        this.tenNhaSanXuat = tenNhaSanXuat;
+        this.quocGia = quocGia;
+    }
 
     public int getId() {
         return id;
@@ -26,12 +34,12 @@ public class NhaSanXuat {
         this.id = id;
     }
 
-    public String getTennsx() {
-        return tennsx;
+    public String getTenNhaSanXuat() {
+        return tenNhaSanXuat;
     }
 
-    public void setTennsx(String tennsx) {
-        this.tennsx = tennsx;
+    public void setTenNhaSanXuat(String tenNhaSanXuat) {
+        this.tenNhaSanXuat = tenNhaSanXuat;
     }
 
     public QuocGia getQuocGia() {
@@ -42,16 +50,8 @@ public class NhaSanXuat {
         this.quocGia = quocGia;
     }
 
-    public NhaSanXuat() {
-    }
-
-    public NhaSanXuat(String tennsx, QuocGia quocGia) {
-        this.tennsx = tennsx;
-        this.quocGia = quocGia;
-    }
-
     @Override
     public String toString() {
-        return tennsx + " - " + quocGia.getTenqg();
+        return tenNhaSanXuat + " - " + quocGia.getTenQuocGia();
     }
 }

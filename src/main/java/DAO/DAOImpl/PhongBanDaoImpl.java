@@ -32,7 +32,7 @@ public class PhongBanDaoImpl extends AbstractDao<String, PhongBan> implements Ph
         } finally {
             session.close();
         }
-        return phongBan.getMapb();
+        return phongBan.getId();
     }
 
     public List<PhongBan> searchByProperty(Map<String, Object> property) {
